@@ -44,7 +44,7 @@ function Sidebar() {
   };
 
   const contentPage = () => {
-    navigate("/content");
+    navigate("/instructor");
   };
 
   const forumPage = () => {
@@ -87,7 +87,8 @@ function Sidebar() {
               )}
               <p className="sidetext-content">
                 {/* {item.lang.dashboard} */}
-                {language == "english" ? "Dashboard" : "தகவல்பலகை"}
+                {/* {language == "english" ? "Dashboard" : "தகவல்பலகை"} */}
+                Dashboard
               </p>
             </div>
             <div
@@ -105,7 +106,8 @@ function Sidebar() {
               )}
               <p className="sidetext-content">
                 {/* {item.lang.course} */}
-                {language == "english" ? "Instructors" : "பாடநெறி"}
+                {/* {language == "english" ? "Instructors" : "பாடநெறி"} */}
+                Instructors
               </p>
             </div>
             <div
@@ -123,7 +125,8 @@ function Sidebar() {
               )}
               <p className="sidetext-content">
                 {/* {item.lang.qna} */}
-                {language == "english" ? "Students" : "கேள்வி பதில்"}
+                {/* {language == "english" ? "Students" : "கேள்வி பதில்"} */}
+                Students
               </p>
             </div>
           </div>
@@ -147,7 +150,8 @@ function Sidebar() {
                 onClick={logouts}
               >
                 {/* {item.lang.logout} */}
-                {language == "english" ? "Logout" : "வெளியேறு"}
+                {/* {language == "english" ? "Logout" : "வெளியேறு"} */}
+                Logout
               </p>
             </div>
           </button>
