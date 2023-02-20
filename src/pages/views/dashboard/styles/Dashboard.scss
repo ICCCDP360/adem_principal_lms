@@ -1,0 +1,40 @@
+.average-container {
+    width: 100%;
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    margin:10px;
+    .average-inside-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      .target-img {
+        // width: 25%;
+      }
+      .average-content-container {
+        width: 100%;
+        .average-content {
+          margin-bottom: 0px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #333333;
+          margin-left: 10%;
+        }
+        .average-subcontent {
+          margin-top: 10px;
+          font-weight: 700;
+          font-size: 24px;
+          margin-left: 10%;
+        }
+      }
+    }
+  }
+
+  .average-container1 {
+    width: 50%;
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    margin:10px;
+    
+  }
