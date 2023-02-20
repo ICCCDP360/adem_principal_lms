@@ -51,7 +51,8 @@ function Signin() {
             </div>
             <p
               className="d-flex justify-content-end"
-              style={{ color: "#0395C4" }}
+              style={{ color: "#0395C4", cursor: "pointer" }}
+              onClick={() => navigate("/forgot_password")}
             >
               Forgot Password ?
             </p>

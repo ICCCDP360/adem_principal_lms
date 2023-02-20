@@ -148,6 +148,7 @@ function DashboardHeader() {
                     paddingLeft: "5%",
                     marginBottom: "5px",
                   }}
+                  onClick={() => navigate("/notification")}
                 >
                   View all
                 </p>
@@ -155,7 +156,11 @@ function DashboardHeader() {
             </Dropdown>
           </div>
           <div>
-            <img src={School} style={{ cursor: "pointer" }} />
+            <img
+              src={School}
+              style={{ cursor: "pointer" }}
+              onClick={Schoolprofile}
+            />
           </div>
         </div>
       </div>
