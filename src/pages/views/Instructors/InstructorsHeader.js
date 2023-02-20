@@ -26,7 +26,7 @@ function InstructorsHeader() {
               marginBottom: "0px",
             }}
           >
-            total Number of Teachers: 10
+            Total Number of Teachers: 10
           </p>
         </div>
         <div style={{ display: "flex", padding: "1%", paddingBottom: "0px" }}>

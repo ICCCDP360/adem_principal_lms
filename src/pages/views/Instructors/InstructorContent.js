@@ -17,7 +17,7 @@ function InstructorContent() {
       teacherName: "Kalai",
       contactNumber: "7305296087",
       assignedClass: "12th",
-      assignedSubject: "math",
+      assignedSubject: "Math",
       Action: "",
     },
     {
