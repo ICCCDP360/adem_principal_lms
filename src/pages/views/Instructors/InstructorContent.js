@@ -101,7 +101,12 @@ function InstructorContent() {
             >
               <img src={Plus} alt="Plus" />
               <p
-                style={{ fontWeight: "600", fontSize: "18px", color: "white" }}
+                style={{
+                  fontWeight: "600",
+                  fontSize: "18px",
+                  color: "white",
+                  marginTop: "0.75rem",
+                }}
               >
                 Teacher
               </p>
@@ -161,6 +166,7 @@ function InstructorContent() {
                 // fontFamily: "Nunito",
                 fontWeight: "500",
                 fontSize: "16px",
+                textAlign: "center",
               }}
             >
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
@@ -228,7 +234,7 @@ function InstructorContent() {
                   >
                     <div
                       style={{
-                        width: "2.5rem",
+                        width: "2.75rem",
                         background: "#F5F5F5",
                         borderRadius: "7px",
                         paddingLeft: "0.5rem",
@@ -257,14 +263,14 @@ function InstructorContent() {
                   </td>
                   <td
                     style={{
-                      border: "1.5px solid #F5F5F5",
+                      border: "1px solid #F5F5F5",
                       height: "3rem",
                       display: "flex",
                       justifyContent: "space-evenly",
                     }}
                   >
-                    <img style={{ width: "2rem" }} src={Delete} alt="delete" />
                     <img style={{ width: "2rem" }} src={Edit} alt="Edit" />
+                    <img style={{ width: "2rem" }} src={Delete} alt="delete" />
                   </td>
                 </tr>
               );
@@ -275,8 +281,10 @@ function InstructorContent() {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
+          // alignItems: "center",
           justifyContent: "flex-end",
+          marginTop: "1rem",
+          paddingRight: "1.5rem",
         }}
       >
         <div>
