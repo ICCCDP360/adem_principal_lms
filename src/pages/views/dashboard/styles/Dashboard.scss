@@ -1,7 +1,7 @@
 .average-container {
     width: 100%;
     background-color: white;
-    padding: 1%;
+    padding: 2%;
     border-radius: 10px;
     margin:10px;
     .average-inside-container {
@@ -36,5 +36,32 @@
     padding: 1%;
     border-radius: 10px;
     margin:10px;
-    
   }
+
+  .average-container2 {
+    background-color: white;
+    padding: 1%;
+    border-radius: 10px;
+    margin:10px;
+  }
+  
+  .first_circle{
+    .CircularProgressbar .CircularProgressbar-path {
+        stroke: #6255A4 !important;
+      }
+    
+      .CircularProgressbar .CircularProgressbar-text {
+        fill: #165811 !important;
+      }
+  }
+
+  .second_circle{
+    .CircularProgressbar .CircularProgressbar-path {
+        stroke: #DE8431 !important;
+      }
+    
+      .CircularProgressbar .CircularProgressbar-text {
+        fill: #731B1B !important;
+      }
+  }
+  
