@@ -8,6 +8,7 @@ import Dashboard from "./../pages/views/dashboard/Dashboard";
 import MainContentPage from "./../pages/views/index";
 import InstructorMainPage from "./../pages/views/Instructors/InstructorMainPage";
 import Forgotpassword from "./../pages/auth/signin/Forgotpassword";
+import StudentsMainPage from "../pages/views/Students/StudentsMainPage";
 
 function IndexRouters() {
   return (
@@ -20,6 +21,7 @@ function IndexRouters() {
         <Route path="/" element={<MainContentPage />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/instructor" element={<InstructorMainPage />} />
+          <Route path="/student" element={<StudentsMainPage />} />
         </Route>
       </Routes>
     </div>

@@ -46,6 +46,9 @@ function Sidebar() {
   const contentPage = () => {
     navigate("/instructor");
   };
+  const studentContent = () => {
+    navigate("/student");
+  };
 
   const forumPage = () => {
     navigate("/forum");
@@ -116,7 +119,7 @@ function Sidebar() {
                   ? "single-sidecontent-active"
                   : "single-sidecontent"
               }
-              onClick={forumPage}
+              onClick={studentContent}
             >
               {stepCount === 1 ? (
                 <img src={forumWhite} />
