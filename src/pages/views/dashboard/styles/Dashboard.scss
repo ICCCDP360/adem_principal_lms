@@ -64,4 +64,8 @@
         fill: #731B1B !important;
       }
   }
+
+  .dropdown-toggle::after {
+    display: none !important;
+  }
   
