@@ -18,6 +18,7 @@ function ProfileContent() {
         borderRadius: "10px",
         marginLeft: "2%",
         marginRight: "2%",
+        height: "80vh",
       }}
     >
       <div
