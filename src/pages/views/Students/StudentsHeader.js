@@ -2,7 +2,7 @@ import React from "react";
 import Notification from "../../../assests/images/notify.svg";
 import School from "../../../assests/images/school.svg";
 
-function InstructorsHeader() {
+const StudentsHeader = () => {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -16,7 +16,7 @@ function InstructorsHeader() {
               marginBottom: "0px",
             }}
           >
-            Teachers
+            Students
           </p>
           <p
             style={{
@@ -26,7 +26,7 @@ function InstructorsHeader() {
               marginBottom: "0px",
             }}
           >
-            Total Number of Teachers: 10
+            total Number of Students: 1395
           </p>
         </div>
         <div style={{ display: "flex", padding: "1%", paddingBottom: "0px" }}>
@@ -41,6 +41,6 @@ function InstructorsHeader() {
       <hr />
     </div>
   );
-}
+};
 
-export default InstructorsHeader;
+export default StudentsHeader;

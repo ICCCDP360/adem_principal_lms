@@ -9,63 +9,129 @@ import Delete from "../../../assests/images/delete.svg";
 import Edit from "../../../assests/images/edit.svg";
 import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
+import dot from "../../../assests/images/3dot.svg";
 
-function InstructorContent() {
+const StuedentsContent = () => {
   const data = [
     {
       id: "1",
-      teacherName: "Kalai",
+      studentName: "Kalai",
       contactNumber: "7305296087",
-      assignedClass: "12th",
-      assignedSubject: "Math",
+      goAdemId: "13458",
+      rollNumber: "2A765",
+      class: "9",
+      section: "A",
+      assignedTeacher: "malar",
       Action: "",
     },
     {
       id: "2",
-      teacherName: "Malai",
-      contactNumber: "8790875643",
-      assignedClass: "9th",
-      assignedSubject: "Science",
+      studentName: "Sangavi",
+      contactNumber: "7305296087",
+      goAdemId: "09856",
+      rollNumber: "5B786",
+      class: "10",
+      section: "B",
+      assignedTeacher: "mathi",
       Action: "",
     },
     {
       id: "3",
-      teacherName: "Malar",
-      contactNumber: "9867543465",
-      assignedClass: "7th",
-      assignedSubject: "Tamil",
+      studentName: "Ramesh",
+      contactNumber: "7305296087",
+      goAdemId: "13479",
+      rollNumber: "7A543",
+      class: "12",
+      section: "A",
+      assignedTeacher: "Raj",
       Action: "",
     },
     {
       id: "4",
-      teacherName: "Bala",
-      contactNumber: "8970564356",
-      assignedClass: "9th",
-      assignedSubject: "English",
+      studentName: "Bhagya",
+      contactNumber: "7305296087",
+      goAdemId: "05648",
+      rollNumber: "6B435",
+      class: "7",
+      section: "B",
+      assignedTeacher: "Naveen",
       Action: "",
     },
     {
       id: "5",
-      teacherName: "Indhu",
-      contactNumber: "8870100111",
-      assignedClass: "10th",
-      assignedSubject: "Science",
+      studentName: "Suresh",
+      contactNumber: "7305296087",
+      goAdemId: "12874",
+      rollNumber: "8C543",
+      class: "9",
+      section: "C",
+      assignedTeacher: "Balaji",
       Action: "",
     },
     {
       id: "6",
-      teacherName: "Seenu",
-      contactNumber: "9791837486",
-      assignedClass: "11th",
-      assignedSubject: "English",
+      studentName: "Kanish",
+      contactNumber: "7305296087",
+      goAdemId: "06725",
+      rollNumber: "5A984",
+      class: "12",
+      section: "A",
+      assignedTeacher: "Lokesh",
       Action: "",
     },
     {
       id: "7",
-      teacherName: "Manoj",
-      contactNumber: "9842134487",
-      assignedClass: "9th",
-      assignedSubject: "Tamil",
+      studentName: "Radhana",
+      contactNumber: "7305296087",
+      goAdemId: "09358",
+      rollNumber: "6B372",
+      class: "7",
+      section: "B",
+      assignedTeacher: "Bharathi",
+      Action: "",
+    },
+    {
+      id: "8",
+      studentName: "Aasifa",
+      contactNumber: "7305296087",
+      goAdemId: "17364",
+      rollNumber: "3A654",
+      class: "9",
+      section: "A",
+      assignedTeacher: "Karthika",
+      Action: "",
+    },
+    {
+      id: "9",
+      studentName: "Ganesh",
+      contactNumber: "7305296087",
+      goAdemId: "06845",
+      rollNumber: "6C345",
+      class: "11",
+      section: "C",
+      assignedTeacher: "Prasanth",
+      Action: "",
+    },
+    {
+      id: "10",
+      studentName: "Manoj",
+      contactNumber: "7305296087",
+      goAdemId: "14793",
+      rollNumber: "8A345",
+      class: "7",
+      section: "A",
+      assignedTeacher: "Pavithra",
+      Action: "",
+    },
+    {
+      id: "11",
+      studentName: "Mathi",
+      contactNumber: "7305296087",
+      goAdemId: "07635",
+      rollNumber: "7B543",
+      class: "12",
+      section: "B",
+      assignedTeacher: "Hari",
       Action: "",
     },
   ];
@@ -78,40 +144,28 @@ function InstructorContent() {
           padding: "2rem",
         }}
       >
-        <div>
-          <button
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "15rem",
+            alignItems: "center",
+            marginTop: "-1rem",
+          }}
+        >
+          <p
             style={{
-              background: " #0395C4",
-              borderRadius: "25px",
-              display: "flex",
-              width: "121px",
-              height: "40px",
-              border: "none",
-              alignItems: "center",
-              justifyContent: "center",
+              background: "#B3E0EE",
+              borderRadius: "10px",
+              width: "2.5rem",
+              fontWeight: "600",
+              fontSize: "20px",
+              textAlign: "center",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                width: "6rem",
-                alignItems: "center",
-              }}
-            >
-              <img src={Plus} alt="Plus" />
-              <p
-                style={{
-                  fontWeight: "600",
-                  fontSize: "18px",
-                  color: "white",
-                  marginTop: "0.75rem",
-                }}
-              >
-                Teacher
-              </p>
-            </div>
-          </button>
+            All
+          </p>
+          <p>Number of Students: 1395</p>
         </div>
         <div
           style={{
@@ -119,6 +173,7 @@ function InstructorContent() {
             width: "27.5rem",
             justifyContent: "space-between",
             alignItems: "center",
+            marginTop: "-1rem",
           }}
         >
           <div
@@ -158,6 +213,7 @@ function InstructorContent() {
             borderCollapse: "collapse",
             border: "1.5px solid #F5F5F5",
             height: "3rem",
+            marginTop: "-1rem",
           }}
         >
           <tbody>
@@ -170,19 +226,29 @@ function InstructorContent() {
               }}
             >
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                S.no
+                GoAdem <br />
+                Rank
               </th>
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Teacher Name
+                Student Name
               </th>
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
                 Contact Number
               </th>
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Assigned Class
+                GoAdem Id
               </th>
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Assigned Subject
+                Roll Number
+              </th>
+              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
+                Class
+              </th>
+              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
+                Section
+              </th>
+              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
+                Assigned <br /> Teacher
               </th>
               <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
                 Actions
@@ -214,7 +280,7 @@ function InstructorContent() {
                       paddingLeft: "1rem",
                     }}
                   >
-                    {value.teacherName}
+                    {value.studentName}
                   </td>
                   <td
                     style={{
@@ -232,16 +298,7 @@ function InstructorContent() {
                       paddingLeft: "1rem",
                     }}
                   >
-                    <div
-                      style={{
-                        width: "2.75rem",
-                        background: "#F5F5F5",
-                        borderRadius: "7px",
-                        paddingLeft: "0.5rem",
-                      }}
-                    >
-                      {value.assignedClass}
-                    </div>
+                    {value.goAdemId}
                   </td>
                   <td
                     style={{
@@ -250,17 +307,36 @@ function InstructorContent() {
                       paddingLeft: "1rem",
                     }}
                   >
-                    <div
-                      style={{
-                        width: "3.5rem",
-                        background: "#F5F5F5",
-                        borderRadius: "7px",
-                        paddingLeft: "0.5rem",
-                      }}
-                    >
-                      {value.assignedSubject}
-                    </div>
+                    {value.rollNumber}
                   </td>
+                  <td
+                    style={{
+                      border: "1.5px solid #F5F5F5",
+                      height: "3rem",
+                      paddingLeft: "1rem",
+                    }}
+                  >
+                    {value.class}
+                  </td>
+                  <td
+                    style={{
+                      border: "1.5px solid #F5F5F5",
+                      height: "3rem",
+                      paddingLeft: "1rem",
+                    }}
+                  >
+                    {value.section}
+                  </td>
+                  <td
+                    style={{
+                      border: "1.5px solid #F5F5F5",
+                      height: "3rem",
+                      paddingLeft: "1rem",
+                    }}
+                  >
+                    {value.assignedTeacher}
+                  </td>
+
                   <td
                     style={{
                       border: "1px solid #F5F5F5",
@@ -269,8 +345,7 @@ function InstructorContent() {
                       justifyContent: "space-evenly",
                     }}
                   >
-                    <img style={{ width: "2rem" }} src={Edit} alt="Edit" />
-                    <img style={{ width: "2rem" }} src={Delete} alt="delete" />
+                    <img style={{ width: "2rem" }} src={dot} alt="dot" />
                   </td>
                 </tr>
               );
@@ -281,7 +356,6 @@ function InstructorContent() {
       <div
         style={{
           display: "flex",
-          // alignItems: "center",
           justifyContent: "flex-end",
           marginTop: "1rem",
           paddingRight: "1.5rem",
@@ -367,6 +441,6 @@ function InstructorContent() {
       </div>
     </div>
   );
-}
+};
 
-export default InstructorContent;
+export default StuedentsContent;

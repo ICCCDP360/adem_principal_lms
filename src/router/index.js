@@ -8,6 +8,7 @@ import Dashboard from "./../pages/views/dashboard/Dashboard";
 import MainContentPage from "./../pages/views/index";
 import InstructorMainPage from "./../pages/views/Instructors/InstructorMainPage";
 import Forgotpassword from "./../pages/auth/signin/Forgotpassword";
+import StudentsMainPage from "../pages/views/Students/StudentsMainPage";
 import ProfileMain from "../pages/views/profile/ProfileMain";
 import Notification from "../pages/views/notification/Notification";
 
@@ -22,6 +23,7 @@ function IndexRouters() {
         <Route path="/" element={<MainContentPage />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/instructor" element={<InstructorMainPage />} />
+          <Route path="/student" element={<StudentsMainPage />} />
           <Route path="/profile" element={<ProfileMain />} />
           <Route path="/notification" element={<Notification />} />
         </Route>
