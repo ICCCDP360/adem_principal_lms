@@ -11,6 +11,7 @@ import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
 import dot from "../../../assests/images/3dot.svg";
 import { Dropdown } from "react-bootstrap";
+import './styles/StudentContent.scss'
 
 const StuedentsContent = () => {
   const data = [
@@ -183,31 +184,31 @@ const StuedentsContent = () => {
               All
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item>All</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+            <Dropdown.Menu style={{textAlign:'center'}}>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>All</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
 
-              <Dropdown.Item>12</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>12</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
 
-              <Dropdown.Item>11</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
-              <Dropdown.Item>10</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>11</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>10</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
 
-              <Dropdown.Item>9</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>9</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
 
-              <Dropdown.Item>8</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>8</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
 
-              <Dropdown.Item>7</Dropdown.Item>
-              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>7</Dropdown.Item>
+              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
 
-              <Dropdown.Item>6</Dropdown.Item>
+              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>6</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <p style={{ marginTop: "0.5rem" }}>Number of Students: 1395</p>
+          <p style={{ marginBottom:'0px' }}>Number of Students: 1395</p>
         </div>
         <div
           style={{
