@@ -555,12 +555,8 @@ function DashboardContent() {
           <Calendar
             onChange={onChange}
             value={value}
-            style={{
-              width: "97%",
-              backgroundColor: "white",
-              border: "1px solid gray",
-              borderRadius: "10px",
-            }}
+            // style={{ width: "97%" }}
+            className="calendar"
           />
         </div>
       </div>

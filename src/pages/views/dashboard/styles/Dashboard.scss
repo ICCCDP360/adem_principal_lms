@@ -1,71 +1,75 @@
 .average-container {
+  width: 100%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 10px;
+  margin: 10px;
+  .average-inside-container {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
-    background-color: white;
-    padding: 2%;
-    border-radius: 10px;
-    margin:10px;
-    .average-inside-container {
-      display: flex;
-      justify-content: space-around;
+    .target-img {
+      // width: 25%;
+    }
+    .average-content-container {
       width: 100%;
-      .target-img {
-        // width: 25%;
+      .average-content {
+        margin-bottom: 0px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #333333;
+        margin-left: 10%;
       }
-      .average-content-container {
-        width: 100%;
-        .average-content {
-          margin-bottom: 0px;
-          font-size: 20px;
-          font-weight: 600;
-          color: #333333;
-          margin-left: 10%;
-        }
-        .average-subcontent {
-          margin-top: 10px;
-          font-weight: 700;
-          font-size: 24px;
-          margin-left: 10%;
-        }
+      .average-subcontent {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 24px;
+        margin-left: 10%;
       }
     }
   }
+}
 
-  .average-container1 {
-    width: 50%;
-    background-color: white;
-    padding: 1%;
-    border-radius: 10px;
-    margin:10px;
-  }
+.average-container1 {
+  width: 50%;
+  background-color: white;
+  padding: 1%;
+  border-radius: 10px;
+  margin: 10px;
+}
 
-  .average-container2 {
-    background-color: white;
-    padding: 1%;
-    border-radius: 10px;
-    margin:10px;
-  }
-  
-  .first_circle{
-    .CircularProgressbar .CircularProgressbar-path {
-        stroke: #6255A4 !important;
-      }
-    
-      .CircularProgressbar .CircularProgressbar-text {
-        fill: #165811 !important;
-      }
+.average-container2 {
+  background-color: white;
+  padding: 1%;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.first_circle {
+  .CircularProgressbar .CircularProgressbar-path {
+    stroke: #6255a4 !important;
   }
 
-  .second_circle{
-    .CircularProgressbar .CircularProgressbar-path {
-        stroke: #DE8431 !important;
-      }
-    
-      .CircularProgressbar .CircularProgressbar-text {
-        fill: #731B1B !important;
-      }
+  .CircularProgressbar .CircularProgressbar-text {
+    fill: #165811 !important;
+  }
+}
+
+.second_circle {
+  .CircularProgressbar .CircularProgressbar-path {
+    stroke: #de8431 !important;
   }
 
-  .dropdown-toggle::after {
-    display: none !important;
+  .CircularProgressbar .CircularProgressbar-text {
+    fill: #731b1b !important;
   }
-  
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.calendar {
+  width: 98% !important;
+  border: none !important;
+}
