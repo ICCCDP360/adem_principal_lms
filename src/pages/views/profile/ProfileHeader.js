@@ -1,75 +1,159 @@
-import React, { useState } from "react";
-import Profile from "../../../assests/images/school.svg";
+import React from "react";
+import School from "../../../assests/images/school.svg";
 import Notification from "../../../assests/images/notify.svg";
-import notifi from "../../../assests/images/notify.svg";
-import popup from "../../../assests/images/popup.svg";
-import logo1 from "../../../assests/images/Ellipse 157.svg";
-import key from "../../../assests/images/key.svg";
-import switchacc from "../../../assests/images/switch.svg";
 import { useNavigate } from "react-router";
-import { Button, Modal } from "react-bootstrap";
 import "./styles/profileheader.scss";
 import { Dropdown } from "react-bootstrap";
 
 function ProfileHeader() {
-  const [show, setShow] = useState(false);
   const navigate = useNavigate();
-  const language = localStorage.getItem("lang");
-
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
-
-  const switchAccount = () => {
-    navigate("/sign_in");
-  };
-
-  const englishLang = () => {
-    localStorage.setItem("lang", "english");
-    window.location.reload();
-  };
-
-  //   const tamilLang = () => {
-  //     localStorage.setItem("lang", "tamil");
-  //     window.location.reload();
-  //   };
   return (
-    <div style={{ width: "100%", padding: "2%", display: "flex" }}>
-      {/* <div className="task-header-container">
-        <div className="task-head-text">
+    <div>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ marginLeft: "1%" }}>
           <p
             style={{
-              marginBottom: "0px",
-              marginTop: "10%",
               fontSize: "24px",
               fontWeight: "700",
+              color: "#333333",
+              marginTop: "0px",
+              marginBottom: "0px",
             }}
           >
             Profile
           </p>
         </div>
-        <div className="rightside-taskcontainer" style={{ cursor: "pointer" }}>
-          <img src={notifi} />
+        <div
+          style={{ display: "flex", paddingBottom: "0px", paddingRight: "1%" }}
+        >
+          <div style={{ marginRight: "30px" }}>
+            <Dropdown>
+              <Dropdown.Toggle
+                style={{
+                  backgroundColor: "transparent",
+                  border: "transparent",
+                }}
+              >
+                <img src={Notification} />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu
+                style={{
+                  width: "310px",
+                  marginLeft: "-250px",
+                  cursor: "pointer",
+                }}
+              >
+                <div
+                  style={{
+                    paddingLeft: "5%",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    paddingRight: "5%",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p style={{ marginBottom: "0px" }}>Content_Admin</p>
+                    <p style={{ marginBottom: "0px" }}>01:00</p>
+                  </div>
+                  <p style={{ marginBottom: "0px", fontSize: "17px" }}>
+                    New videos was uploaded on th...
+                  </p>
+                </div>
+                <hr
+                  style={{
+                    marginTop: "5px",
+                    borderTop: "2px solid gray",
+                    marginBottom: "5px",
+                  }}
+                />
+                <div
+                  style={{
+                    paddingLeft: "5%",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    paddingRight: "5%",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p style={{ marginBottom: "0px" }}>Content_Admin</p>
+                    <p style={{ marginBottom: "0px" }}>02:38</p>
+                  </div>
+                  <p style={{ marginBottom: "0px", fontSize: "17px" }}>
+                    New lesson was added in chemistry
+                  </p>
+                </div>
+                <hr
+                  style={{
+                    marginTop: "5px",
+                    borderTop: "2px solid gray",
+                    marginBottom: "5px",
+                  }}
+                />
+                <div
+                  style={{
+                    paddingLeft: "5%",
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    paddingRight: "5%",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p style={{ marginBottom: "0px" }}>SPOC</p>
+                    <p style={{ marginBottom: "0px" }}>12:30</p>
+                  </div>
+                  <p style={{ marginBottom: "0px", fontSize: "17px" }}>
+                    New videos was uploaded on th...
+                  </p>
+                </div>
+                <hr
+                  style={{
+                    marginTop: "5px",
+                    borderTop: "2px solid gray",
+                    marginBottom: "5px",
+                  }}
+                />
+                <p
+                  //   onClick={() => navigate("/notification")}
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    color: "#0395C4",
+                    paddingLeft: "5%",
+                    marginBottom: "5px",
+                  }}
+                  onClick={() => navigate("/notification")}
+                >
+                  View all
+                </p>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
           <div>
-            <img src={Profile} onClick={handleShow} />
+            <img
+              src={School}
+              style={{ cursor: "pointer" }}
+              // onClick={Schoolprofile}
+            />
           </div>
         </div>
-      </div> */}
-      <div style={{ width: "50%" }}>
-        <p
-          style={{
-            marginBottom: "0px",
-
-            fontSize: "24px",
-            fontWeight: "700",
-          }}
-        >
-          Profile
-        </p>
       </div>
-      <div style={{ width: "50%", marginLeft: "85%" }}>
-        <img src={notifi} style={{ marginRight: "10px" }} />
-        <img src={Profile} style={{ marginLeft: "15px" }} />
-      </div>
+      <hr />
     </div>
   );
 }

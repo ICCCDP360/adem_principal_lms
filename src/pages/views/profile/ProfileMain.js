@@ -5,9 +5,8 @@ import ProfileHeader from "./ProfileHeader";
 
 function ProfileMain() {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ padding: "1%", width: "100%" }}>
       <ProfileHeader />
-      <hr style={{ borderTop: "2px solid #0197c6" }} />
       <ProfileContent />
     </div>
   );

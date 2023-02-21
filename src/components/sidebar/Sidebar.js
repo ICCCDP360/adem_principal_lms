@@ -1,14 +1,5 @@
 import React from "react";
 import "./styles/Sidebar.scss";
-// import AdamLogo from "../../assets/images/adamLogo.svg";
-// import dashboardWhite from "../../assets/images/dashboardWhite.svg";
-// import dashboardBlack from "../../assets/images/dashboardBlack.svg";
-// import contentWhite from "../../assets/images/contentWhite.svg";
-// import contentBlack from "../../assets/images/contentBlack.svg";
-// import forumWhite from "../../assets/images/forumWhite.svg";
-// import forumBlack from "../../assets/images/forumBlack.svg";
-// import LogoutIcon from "../../assets/images/logoutIcon.svg";
-// import RightArrow from "../../assets/images/rightArrow.svg";
 import AdamLogo from "../../assests/images/adamLogo.svg";
 import dashboardWhite from "../../assests/images/dashboardWhite.svg";
 import dashboardBlack from "../../assests/images/dashboardBlack.svg";
@@ -19,25 +10,11 @@ import forumBlack from "../../assests/images/forumBlack.svg";
 import LogoutIcon from "../../assests/images/logoutIcon.svg";
 import RightArrow from "../../assests/images/rightArrow.svg";
 import { useLocation, useNavigate } from "react-router-dom";
-// import axios from "axios";
 
 function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
-  // const [stepCount, setStepCount] = useState(0);
-  // const [taskRem, setTaskRem] = useState([]);
   const stepCount = 0;
-  const language = localStorage.getItem("lang");
-
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `http://localhost:8080/api/v1/student/sidebar/content?lang=${language}`
-  //     )
-  //     .then((res) => {
-  //       setTaskRem(res.data);
-  //     }, []);
-  // });
 
   const dashboardPage = () => {
     navigate("/dashboard");
@@ -50,18 +27,12 @@ function Sidebar() {
     navigate("/student");
   };
 
-  const forumPage = () => {
-    navigate("/forum");
-  };
-
-  const logouts = () => {
-    navigate("/sign_in");
+  const logout = () => {
+    navigate("/");
   };
 
   return (
     <>
-      {/* {taskRem.slice(0, 1).map((item, index) => {
-        return ( */}
       <div className="sidebar-full-container">
         <div>
           <div
@@ -89,14 +60,12 @@ function Sidebar() {
                 <img src={dashboardBlack} />
               )}
               <p className="sidetext-content">
-                {/* {item.lang.dashboard} */}
-                {/* {language == "english" ? "Dashboard" : "தகவல்பலகை"} */}
                 Dashboard
               </p>
             </div>
             <div
               className={
-                location.pathname === "/content"
+                location.pathname === "/instructor"
                   ? "single-sidecontent-active"
                   : "single-sidecontent"
               }
@@ -108,14 +77,12 @@ function Sidebar() {
                 <img src={contentBlack} />
               )}
               <p className="sidetext-content">
-                {/* {item.lang.course} */}
-                {/* {language == "english" ? "Instructors" : "பாடநெறி"} */}
                 Instructors
               </p>
             </div>
             <div
               className={
-                location.pathname === "/forum"
+                location.pathname === "/student"
                   ? "single-sidecontent-active"
                   : "single-sidecontent"
               }
@@ -127,8 +94,6 @@ function Sidebar() {
                 <img src={forumBlack} />
               )}
               <p className="sidetext-content">
-                {/* {item.lang.qna} */}
-                {/* {language == "english" ? "Students" : "கேள்வி பதில்"} */}
                 Students
               </p>
             </div>
@@ -142,18 +107,12 @@ function Sidebar() {
             <div className="logout-btn-container">
               <img
                 src={LogoutIcon}
-                className={
-                  language == "english" ? "logout-img" : "logout-img-tamil"
-                }
+                className='logout-img'
               />
               <p
-                className={
-                  language == "english" ? "logout-text" : "logout-text-tamil"
-                }
-                onClick={logouts}
+                className='logout-text'
+                onClick={logout}
               >
-                {/* {item.lang.logout} */}
-                {/* {language == "english" ? "Logout" : "வெளியேறு"} */}
                 Logout
               </p>
             </div>

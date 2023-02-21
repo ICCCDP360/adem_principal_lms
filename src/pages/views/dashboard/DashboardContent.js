@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-
 import Trophy from "../../../assests/images/trophy.svg";
 import NoOfStudent from "../../../assests/images/profstudent.svg";
 import Clock from "../../../assests/images/clock.svg";
@@ -9,9 +8,11 @@ import Up from "../../../assests/images/principalup.svg";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-calendar/dist/Calendar.css";
-
 import "./styles/Dashboard.scss";
+import { useNavigate } from "react-router-dom";
+
 function DashboardContent() {
+  const navigate = useNavigate();
   const [value, onChange] = useState(new Date());
   const data = [
     {
@@ -72,7 +73,7 @@ function DashboardContent() {
     },
   ];
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
       <div style={{ display: "flex", width: "100%" }}>
         <div style={{ width: "100%" }}>
           <div style={{ width: "100%", display: "flex" }}>
@@ -150,7 +151,7 @@ function DashboardContent() {
                 borderRadius: "10px",
               }}
             >
-              <div>
+              <div onClick={() => navigate("/student")}>
                 <p
                   style={{
                     marginTop: "0px",
@@ -548,7 +549,7 @@ function DashboardContent() {
             borderRadius: "10px",
             padding: "1%",
             margin: "10px",
-            height: "40vh",
+            height: "100%",
           }}
         >
           <Calendar
