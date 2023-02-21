@@ -4,9 +4,8 @@ import NotificationContent from "./NotificationContent";
 
 function Notification() {
   return (
-    <div style={{ width: "100%", backgroundColor: "#F5F5F5" }}>
+    <div style={{ width: "100%", padding: "1%" }}>
       <NotificationHeader />
-      <hr style={{ borderTop: "2px solid #0197c6" }} />
       <NotificationContent />
     </div>
   );
