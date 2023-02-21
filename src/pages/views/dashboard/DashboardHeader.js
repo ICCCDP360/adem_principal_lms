@@ -158,7 +158,7 @@ function DashboardHeader() {
           <div>
             <img
               src={School}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer",marginTop: "0.35rem" }}
               onClick={Schoolprofile}
             />
           </div>

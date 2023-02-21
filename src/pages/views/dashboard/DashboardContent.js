@@ -73,7 +73,7 @@ function DashboardContent() {
     },
   ];
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div>
       <div style={{ display: "flex", width: "100%" }}>
         <div style={{ width: "100%" }}>
           <div style={{ width: "100%", display: "flex" }}>
@@ -552,6 +552,7 @@ function DashboardContent() {
             height: "100%",
           }}
         >
+            <p style={{ fontSize: "20px", fontWeight: "600",marginBottom:'0px' }}>Calendar</p>
           <Calendar
             onChange={onChange}
             value={value}
