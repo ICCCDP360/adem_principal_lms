@@ -10,6 +10,7 @@ import Edit from "../../../assests/images/edit.svg";
 import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
 import dot from "../../../assests/images/3dot.svg";
+import { Dropdown } from "react-bootstrap";
 
 const StuedentsContent = () => {
   const data = [
@@ -153,7 +154,7 @@ const StuedentsContent = () => {
             marginTop: "-1rem",
           }}
         >
-          <p
+          {/* <p
             style={{
               background: "#B3E0EE",
               borderRadius: "10px",
@@ -164,8 +165,49 @@ const StuedentsContent = () => {
             }}
           >
             All
-          </p>
-          <p>Number of Students: 1395</p>
+          </p> */}
+          <Dropdown style={{ width: "10px" }}>
+            <Dropdown.Toggle
+              style={{
+                background: "#B3E0EE",
+                borderRadius: "10px",
+                fontWeight: "600",
+                fontSize: "20px",
+                textAlign: "center",
+                border: "none",
+                color: "black",
+                // backgroundColor: "transparent",
+                // border: "transparent",
+              }}
+            >
+              All
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item>All</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+
+              <Dropdown.Item>12</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+
+              <Dropdown.Item>11</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+              <Dropdown.Item>10</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+
+              <Dropdown.Item>9</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+
+              <Dropdown.Item>8</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+
+              <Dropdown.Item>7</Dropdown.Item>
+              <hr style={{ width: "50%", color: "#0395C4" }}></hr>
+
+              <Dropdown.Item>6</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <p style={{ marginTop: "0.5rem" }}>Number of Students: 1395</p>
         </div>
         <div
           style={{
@@ -345,7 +387,29 @@ const StuedentsContent = () => {
                       justifyContent: "space-evenly",
                     }}
                   >
-                    <img style={{ width: "2rem" }} src={dot} alt="dot" />
+                    <Dropdown>
+                      <Dropdown.Toggle
+                        style={{
+                          backgroundColor: "transparent",
+                          border: "transparent",
+                        }}
+                      >
+                        <img style={{ width: "2rem" }} src={dot} alt="dot" />
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu style={{ border: "1.5px  solid #A2A2A2" }}>
+                        <Dropdown.Item>Edit</Dropdown.Item>
+                        <Dropdown.Item
+                          style={{
+                            borderTop: "1.5px  solid #A2A2A2",
+                            borderBottom: "1.5px  solid #A2A2A2",
+                          }}
+                        >
+                          Suspend
+                        </Dropdown.Item>
+                        <Dropdown.Item>Delete</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </td>
                 </tr>
               );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sort from "../../../assests/images/sort.svg";
 import Plus from "../../../assests/images/plus.svg";
 import Search from "../../../assests/images/search.svg";
@@ -9,8 +9,19 @@ import Delete from "../../../assests/images/delete.svg";
 import Edit from "../../../assests/images/edit.svg";
 import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
+import Modal from "react-bootstrap/Modal";
 
 function InstructorContent() {
+  // const handlesubmit = () => {
+  //   setShowScore(true);
+  //   setShow(false);
+  // };
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [math, setMath] = useState(false);
+
   const data = [
     {
       id: "1",
@@ -80,6 +91,7 @@ function InstructorContent() {
       >
         <div>
           <button
+            onClick={handleShow}
             style={{
               background: " #0395C4",
               borderRadius: "25px",
@@ -269,7 +281,12 @@ function InstructorContent() {
                       justifyContent: "space-evenly",
                     }}
                   >
-                    <img style={{ width: "2rem" }} src={Edit} alt="Edit" />
+                    <img
+                      onClick={handleShow}
+                      style={{ width: "2rem" }}
+                      src={Edit}
+                      alt="Edit"
+                    />
                     <img style={{ width: "2rem" }} src={Delete} alt="delete" />
                   </td>
                 </tr>
@@ -365,6 +382,209 @@ function InstructorContent() {
           <img src={rightpath} alt="right" />
         </div>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        // style={{
+        //   marginTop: "15%",
+        //   width: "70%",
+        // }}
+      >
+        <Modal.Body>
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <p style={{ fontSize: "20px", fontWeight: "600" }}>
+                Add Teachers
+              </p>
+              <div></div>
+              <div>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  style={{ border: "none", background: "white" }}
+                  onClick={handleClose}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
+            <div style={{ width: "100%" }}>
+              <p
+                style={{
+                  marginBottom: "0px",
+                  fontSize: "16px",
+                  fontWeight: "500",
+                }}
+              >
+                Name
+              </p>
+              <input
+                value="Jenita"
+                style={{
+                  width: "95%",
+                  padding: "1.5%",
+                  borderRadius: "5px",
+                  border: "1px solid gray",
+                  marginBottom: "2%",
+                  marginTop: "2%",
+                }}
+                type="text"
+              />
+            </div>
+            <div style={{ width: "100%" }}>
+              <p
+                style={{
+                  marginBottom: "0px",
+                  fontSize: "16px",
+                  fontWeight: "500",
+                }}
+              >
+                Mobile Number
+              </p>
+              <input
+                value="7305296087"
+                style={{
+                  width: "95%",
+                  padding: "1.5%",
+                  borderRadius: "5px",
+                  border: "1px solid gray",
+                  marginBottom: "2%",
+                  marginTop: "2%",
+                }}
+                type="number"
+              />
+            </div>
+            <div style={{ width: "100%" }}>
+              <p
+                style={{
+                  marginBottom: "0px",
+                  fontSize: "16px",
+                  fontWeight: "500",
+                }}
+              >
+                Select Class
+              </p>
+              <input
+                value="12th"
+                style={{
+                  width: "95%",
+                  padding: "1.5%",
+                  borderRadius: "5px",
+                  border: "1px solid gray",
+                  marginBottom: "2%",
+                  marginTop: "2%",
+                }}
+                type="text"
+              />
+            </div>
+            <div>
+              <div>
+                <p style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Assign Subject
+                </p>
+              </div>
+              <div style={{ display: "flex" }}>
+                <div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="math"
+                      value={math}
+                      onChange={(e) => setMath(e.target.checked)}
+                    />
+                    <label className="form-check-label" htmlFor="math">
+                      Mathematics
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="math"
+                      value={math}
+                      onChange={(e) => setMath(e.target.checked)}
+                    />
+                    <label className="form-check-label" htmlFor="math">
+                      Physics
+                    </label>
+                  </div>
+                </div>
+                <div style={{ marginLeft: "2%" }}>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="math"
+                      value={math}
+                      onChange={(e) => setMath(e.target.checked)}
+                    />
+                    <label className="form-check-label" htmlFor="math">
+                      Chemistry
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="math"
+                      value={math}
+                      onChange={(e) => setMath(e.target.checked)}
+                    />
+                    <label className="form-check-label" htmlFor="math">
+                      Biology
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  width: "42%",
+                  justifyContent: "space-between",
+                  marginTop: "4%",
+                }}
+              >
+                <div>
+                  <button
+                    style={{
+                      width: "88px",
+                      height: "40px",
+                      fontWeight: "600",
+                      fontSize: "18px",
+                      color: "#FFFFFF",
+                      background: "#0395C4",
+                      borderRadius: "25px",
+                      border: "none",
+                    }}
+                  >
+                    Add
+                  </button>
+                </div>
+                <div>
+                  <button
+                    style={{
+                      width: "88px",
+                      height: "40px",
+                      fontWeight: "600",
+                      fontSize: "18px",
+                      color: "#0395C4",
+                      // background: "#0395C4",
+                      borderRadius: "25px",
+                      border: "none",
+                      border: "1.5px solid #0395C4",
+                    }}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }
