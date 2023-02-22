@@ -1,24 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Sort from "../../../assests/images/sort.svg";
-import Plus from "../../../assests/images/plus.svg";
 import Search from "../../../assests/images/search.svg";
 import filter from "../../../assests/images/filter.svg";
 import Print from "../../../assests/images/printfull.svg";
 import Download from "../../../assests/images/download.svg";
-import Delete from "../../../assests/images/delete.svg";
-import Edit from "../../../assests/images/edit.svg";
 import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
 import dot from "../../../assests/images/3dot.svg";
 import { Dropdown } from "react-bootstrap";
-import './styles/StudentContent.scss'
+import "./styles/StudentContent.scss";
 
 const StuedentsContent = () => {
+  const [search, setSearch] = useState("");
   const data = [
     {
       id: "1",
       studentName: "Kalai",
-      contactNumber: "7305296087",
+      contactNumber: "77897987878",
       goAdemId: "13458",
       rollNumber: "2A765",
       class: "9",
@@ -184,31 +182,47 @@ const StuedentsContent = () => {
               All
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{textAlign:'center'}}>
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>All</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+            <Dropdown.Menu style={{ textAlign: "center" }}>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                All
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
 
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>12</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                12
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
 
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>11</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>10</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                11
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                10
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
 
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>9</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                9
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
 
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>8</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                8
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
 
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>7</Dropdown.Item>
-              <hr style={{ color: "#0395C4",margin:'0px 3%' }}></hr>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                7
+              </Dropdown.Item>
+              <hr style={{ color: "#0395C4", margin: "0px 3%" }}></hr>
 
-              <Dropdown.Item style={{fontSize:'16px',fontWeight:'500'}}>6</Dropdown.Item>
+              <Dropdown.Item style={{ fontSize: "16px", fontWeight: "500" }}>
+                6
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <p style={{ marginBottom:'0px' }}>Number of Students: 1395</p>
+          <p style={{ marginBottom: "0px" }}>Number of Students: 1395</p>
         </div>
         <div
           style={{
@@ -238,7 +252,8 @@ const StuedentsContent = () => {
               type="search"
               id="gsearch"
               name="gsearch"
-            ></input>
+              onChange={(e) => setSearch(e.target.value)}
+            />
             <img style={{ marginRight: "0.5rem" }} src={Search} alt="Search" />
           </div>
           <div>
@@ -297,124 +312,147 @@ const StuedentsContent = () => {
                 Actions
               </th>
             </tr>
-            {data.map((value) => {
-              return (
-                <tr
-                  style={{
-                    // fontFamily: "Nunito",
-                    fontWeight: "400",
-                    fontSize: "16px",
-                  }}
-                  key={value.id}
-                >
-                  <td
+            {data
+              .filter((value) => {
+                return search.toLowerCase() === ""
+                  ? value
+                  : value.studentName.toLowerCase().includes(search) ||
+                      value.contactNumber.toLowerCase().includes(search) ||
+                      value.Action.toLowerCase().includes(search) ||
+                      value.class.toLowerCase().includes(search) ||
+                      value.goAdemId.toLowerCase().includes(search) ||
+                      value.rollNumber.toLowerCase().includes(search) ||
+                      value.section.toLowerCase().includes(search) ||
+                      value.id.toLowerCase().includes(search) ||
+                      value.assignedTeacher.toLowerCase().includes(search);
+              })
+              .map((value) => {
+                return (
+                  <tr
                     style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      textAlign: "center",
+                      // fontFamily: "Nunito",
+                      fontWeight: "400",
+                      fontSize: "16px",
                     }}
+                    key={value.id}
                   >
-                    {value.id}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.studentName}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.contactNumber}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.goAdemId}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.rollNumber}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.class}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.section}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.assignedTeacher}
-                  </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.id}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.studentName}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.contactNumber}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.goAdemId}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.rollNumber}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.class}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.section}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.assignedTeacher}
+                    </td>
 
-                  <td
-                    style={{
-                      border: "1px solid #F5F5F5",
-                      height: "3rem",
-                      display: "flex",
-                      justifyContent: "space-evenly",
-                    }}
-                  >
-                    <Dropdown>
-                      <Dropdown.Toggle
-                        style={{
-                          backgroundColor: "transparent",
-                          border: "transparent",
-                        }}
-                      >
-                        <img style={{ width: "2rem" }} src={dot} alt="dot" />
-                      </Dropdown.Toggle>
-
-                      <Dropdown.Menu style={{ border: "1.5px  solid #A2A2A2" }}>
-                        <Dropdown.Item>Edit</Dropdown.Item>
-                        <Dropdown.Item
+                    <td
+                      style={{
+                        border: "1px solid #F5F5F5",
+                        height: "3rem",
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      <Dropdown>
+                        <Dropdown.Toggle
                           style={{
-                            borderTop: "1.5px  solid #A2A2A2",
-                            borderBottom: "1.5px  solid #A2A2A2",
+                            backgroundColor: "transparent",
+                            border: "transparent",
                           }}
                         >
-                          Suspend
-                        </Dropdown.Item>
-                        <Dropdown.Item>Delete</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </td>
-                </tr>
-              );
-            })}
+                          <img style={{ width: "2rem" }} src={dot} alt="dot" />
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu
+                          style={{ border: "1.5px  solid #A2A2A2" }}
+                        >
+                          <Dropdown.Item>Edit</Dropdown.Item>
+                          <Dropdown.Item
+                            style={{
+                              borderTop: "1.5px  solid #A2A2A2",
+                              borderBottom: "1.5px  solid #A2A2A2",
+                            }}
+                          >
+                            Suspend
+                          </Dropdown.Item>
+                          <Dropdown.Item>Delete</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>

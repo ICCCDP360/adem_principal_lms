@@ -15,6 +15,7 @@ import { Dropdown } from "react-bootstrap";
 import dropdown from "../../../assests/images/dropdown.svg";
 
 function InstructorContent() {
+  const [search, setSearch] = useState("");
   // const handlesubmit = () => {
   //   setShowScore(true);
   //   setShow(false);
@@ -155,7 +156,8 @@ function InstructorContent() {
               type="search"
               id="gsearch"
               name="gsearch"
-            ></input>
+              onChange={(e) => setSearch(e.target.value)}
+            />
             <img style={{ marginRight: "0.5rem" }} src={Search} alt="Search" />
           </div>
           <div>
@@ -203,98 +205,120 @@ function InstructorContent() {
                 Actions
               </th>
             </tr>
-            {data.map((value) => {
-              return (
-                <tr
-                  style={{
-                    // fontFamily: "Nunito",
-                    fontWeight: "400",
-                    fontSize: "16px",
-                  }}
-                  key={value.id}
-                >
-                  <td
+            {data
+              .filter((value) => {
+                return search.toLowerCase() === ""
+                  ? value
+                  : value.teacherName.toLowerCase().includes(search) ||
+                      value.Action.toLowerCase().includes(search) ||
+                      value.assignedSubject.toLowerCase().includes(search) ||
+                      value.assignedClass.toLowerCase().includes(search) ||
+                      value.contactNumber.toLowerCase().includes(search) ||
+                      value.id.toLowerCase().includes(search);
+              })
+              .map((value) => {
+                return (
+                  <tr
                     style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      textAlign: "center",
+                      // fontFamily: "Nunito",
+                      fontWeight: "400",
+                      fontSize: "16px",
                     }}
+                    key={value.id}
                   >
-                    {value.id}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.teacherName}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    {value.contactNumber}
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    <div
+                    <td
                       style={{
-                        width: "2.75rem",
-                        background: "#F5F5F5",
-                        borderRadius: "7px",
-                        paddingLeft: "0.5rem",
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        textAlign: "center",
                       }}
                     >
-                      {value.assignedClass}
-                    </div>
-                  </td>
-                  <td
-                    style={{
-                      border: "1.5px solid #F5F5F5",
-                      height: "3rem",
-                      paddingLeft: "1rem",
-                    }}
-                  >
-                    <div
+                      {value.id}
+                    </td>
+                    <td
                       style={{
-                        width: "3.5rem",
-                        background: "#F5F5F5",
-                        borderRadius: "7px",
-                        paddingLeft: "0.5rem",
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
                       }}
                     >
-                      {value.assignedSubject}
-                    </div>
-                  </td>
-                  <td
-                    style={{
-                      border: "1px solid #F5F5F5",
-                      height: "3rem",
-                      display: "flex",
-                      justifyContent: "space-evenly",
-                    }}
-                  >
-                    <img
-                      onClick={handleShow}
-                      style={{ width: "2rem" }}
-                      src={Edit}
-                      alt="Edit"
-                    />
-                    <img style={{ width: "2rem" }} src={Delete} alt="delete" />
-                  </td>
-                </tr>
-              );
-            })}
+                      {value.teacherName}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {value.contactNumber}
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "2.75rem",
+                          background: "#F5F5F5",
+                          borderRadius: "7px",
+                          paddingLeft: "0.5rem",
+                          // textAlign: "center",
+                        }}
+                      >
+                        {value.assignedClass}
+                      </div>
+                    </td>
+                    <td
+                      style={{
+                        border: "1.5px solid #F5F5F5",
+                        height: "3rem",
+                        paddingLeft: "1rem",
+                        // textAlign: "center",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "3.5rem",
+                          background: "#F5F5F5",
+                          borderRadius: "7px",
+                          paddingLeft: "0.5rem",
+                          textAlign: "center",
+                        }}
+                      >
+                        {value.assignedSubject}
+                      </div>
+                    </td>
+                    <td
+                      style={{
+                        border: "1px solid #F5F5F5",
+                        height: "3rem",
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                        textAlign: "center",
+                      }}
+                    >
+                      <img
+                        onClick={handleShow}
+                        style={{ width: "2rem" }}
+                        src={Edit}
+                        alt="Edit"
+                      />
+                      <img
+                        style={{ width: "2rem" }}
+                        src={Delete}
+                        alt="delete"
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
