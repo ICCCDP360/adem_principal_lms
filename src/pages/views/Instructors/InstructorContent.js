@@ -10,6 +10,9 @@ import Edit from "../../../assests/images/edit.svg";
 import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
 import Modal from "react-bootstrap/Modal";
+import { Dropdown } from "react-bootstrap";
+
+import dropdown from "../../../assests/images/dropdown.svg";
 
 function InstructorContent() {
   // const handlesubmit = () => {
@@ -466,18 +469,81 @@ function InstructorContent() {
               >
                 Select Class
               </p>
-              <input
-                value="12th"
+              <div
                 style={{
                   width: "95%",
-                  padding: "1.5%",
-                  borderRadius: "5px",
                   border: "1px solid gray",
-                  marginBottom: "2%",
                   marginTop: "2%",
+                  marginBottom: "2%",
+                  borderRadius: "5px",
+                  display: "flex",
                 }}
-                type="text"
-              />
+              >
+                <input
+                  value="12th"
+                  style={{
+                    width: "90%",
+                    padding: "1.5%",
+                    // borderRadius: "5px",
+                    // border: "1px solid gray",
+                    // marginBottom: "2%",
+                    // marginTop: "2%",
+                    border: "none",
+                  }}
+                  type="text"
+                />
+                <Dropdown>
+                  <Dropdown.Toggle
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "transparent",
+                    }}
+                  >
+                    <img src={dropdown} alt="dropdown" />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu style={{ border: "1.5px  solid #A2A2A2" }}>
+                    <Dropdown.Item>12th</Dropdown.Item>
+                    <Dropdown.Item
+                      style={{
+                        borderTop: "1.5px  solid #A2A2A2",
+                        borderBottom: "1.5px  solid #A2A2A2",
+                      }}
+                    >
+                      11th
+                    </Dropdown.Item>
+                    <Dropdown.Item>10th</Dropdown.Item>
+                    <Dropdown.Item
+                      style={{
+                        borderTop: "1.5px  solid #A2A2A2",
+                      }}
+                    >
+                      9th
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      style={{
+                        borderTop: "1.5px  solid #A2A2A2",
+                      }}
+                    >
+                      8th
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      style={{
+                        borderTop: "1.5px  solid #A2A2A2",
+                      }}
+                    >
+                      7th
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      style={{
+                        borderTop: "1.5px  solid #A2A2A2",
+                      }}
+                    >
+                      6th
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
             </div>
             <div>
               <div>
