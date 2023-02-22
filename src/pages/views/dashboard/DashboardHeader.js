@@ -3,6 +3,7 @@ import Notification from "../../../assests/images/notify.svg";
 import School from "../../../assests/images/school.svg";
 import { useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import "./styles/Dashboard.scss";
 
 function DashboardHeader() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function DashboardHeader() {
   }
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="header-response">
         <div style={{ marginLeft: "1%" }}>
           <p
             style={{
@@ -158,7 +159,7 @@ function DashboardHeader() {
           <div>
             <img
               src={School}
-              style={{ cursor: "pointer",marginTop: "0.35rem" }}
+              style={{ cursor: "pointer", marginTop: "0.35rem" }}
               onClick={Schoolprofile}
             />
           </div>

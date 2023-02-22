@@ -73,10 +73,10 @@ function DashboardContent() {
     },
   ];
   return (
-    <div>
-      <div style={{ display: "flex", width: "100%" }}>
-        <div style={{ width: "100%" }}>
-          <div style={{ width: "100%", display: "flex" }}>
+    <div className="main-container">
+      <div className=" main-contain-responsive">
+        <div className=" main-container-2-response">
+          <div className="d-flex ">
             <div className="average-container">
               <div className="average-inside-container">
                 <img src={Trophy} className="target-img" />
@@ -130,39 +130,11 @@ function DashboardContent() {
           </div>
         </div>
         <div className="average-container1">
-          <p
-            style={{
-              marginTop: "0px",
-              fontSize: "20px",
-              fontWeight: "600",
-              marginBottom: "2%",
-            }}
-          >
-            Preparatory Courses Performance
-          </p>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div
-              style={{
-                border: "1px solid #F5F5F5",
-                width: "48%",
-                padding: "2%",
-                display: "flex",
-                justifyContent: "center",
-                borderRadius: "10px",
-              }}
-            >
+          <p className="Preparatory">Preparatory Courses Performance</p>
+          <div className="d-flex justify-content-between">
+            <div className="average-contain-preparatory">
               <div onClick={() => navigate("/student")}>
-                <p
-                  style={{
-                    marginTop: "0px",
-                    marginBottom: "0px",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                    color: "#333333",
-                  }}
-                >
-                  12th Standard
-                </p>
+                <p className="average-contain-12-para">12th Standard</p>
                 <p
                   style={{
                     marginTop: "0px",
@@ -173,367 +145,106 @@ function DashboardContent() {
                 >
                   80%
                 </p>
-                <div
-                  style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                  className="first_circle"
-                >
+                <div className="first_circle">
                   <CircularProgressbar value={80} text={`2%`} />
                 </div>
-                <p style={{ marginBottom: "0px" }}>No.of.Students: 193</p>
+                <p className="no-student">No.of.Students: 193</p>
               </div>
             </div>
-            <div
-              style={{
-                border: "1px solid #F5F5F5",
-                width: "48%",
-                padding: "2%",
-                display: "flex",
-                justifyContent: "center",
-                borderRadius: "10px",
-              }}
-            >
+            <div className="average-contain-11th">
               <div>
-                <p
-                  style={{
-                    marginTop: "0px",
-                    marginBottom: "0px",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                    color: "#333333",
-                  }}
-                >
-                  11th Standard
-                </p>
-                <p
-                  style={{
-                    marginTop: "0px",
-                    marginBottom: "0px",
-                    fontSize: "24px",
-                    fontWeight: "700",
-                  }}
-                >
-                  78%
-                </p>
-                <div
-                  style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                  className="first_circle"
-                >
+                <p className="standard-para-11th">11th Standard</p>
+                <p className="para-78">78%</p>
+                <div className="first_circle">
                   <CircularProgressbar value={78} text={`1.5%`} />
                 </div>
-                <p style={{ marginBottom: "0px" }}>No.of.Students: 207</p>
+                <p className="no-student">No.of.Students: 207</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="average-container2">
-        <p style={{ marginTop: "0px", fontSize: "20px", fontWeight: "600" }}>
+        <p className="average-contain-2-Preparatory">
           Preparatory Courses Performance
         </p>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div
-            style={{
-              border: "1px solid #F5F5F5",
-              width: "18%",
-              padding: "2%",
-              display: "flex",
-              justifyContent: "center",
-              borderRadius: "10px",
-            }}
-          >
+        <div className=" average-container-2-response">
+          <div className="average-main-container-2">
             <div>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "18px",
-                  fontWeight: "400",
-                  color: "#333333",
-                }}
-              >
-                10th Standard
-              </p>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "24px",
-                  fontWeight: "700",
-                }}
-              >
-                95%
-              </p>
-              <div
-                style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                className="first_circle"
-              >
+              <p className="average-container-10th">10th Standard</p>
+              <p className="average-container-95">95%</p>
+              <div className="first_circle">
                 <CircularProgressbar value={95} text={`2%`} />
               </div>
-              <p style={{ marginBottom: "0px" }}>No.of.Students: 199</p>
+              <p className="average-contain-2-no">No.of.Students: 199</p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px solid #F5F5F5",
-              width: "18%",
-              padding: "2%",
-              display: "flex",
-              justifyContent: "center",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="average-main-container-2 ">
             <div>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "18px",
-                  fontWeight: "400",
-                  color: "#333333",
-                }}
-              >
-                9th Standard
-              </p>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "24px",
-                  fontWeight: "700",
-                }}
-              >
-                90%
-              </p>
-              <div
-                style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                className="first_circle"
-              >
+              <p className="average-container-10th">9th Standard</p>
+              <p className="average-container-95">90%</p>
+              <div className="first_circle">
                 <CircularProgressbar value={90} text={`1.5%`} />
               </div>
               <p style={{ marginBottom: "0px" }}>No.of.Students: 201</p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px solid #F5F5F5",
-              width: "18%",
-              padding: "2%",
-              display: "flex",
-              justifyContent: "center",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="average-main-container-2 ">
             <div>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "18px",
-                  fontWeight: "400",
-                  color: "#333333",
-                }}
-              >
-                8th Standard
-              </p>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "24px",
-                  fontWeight: "700",
-                }}
-              >
-                65%
-              </p>
-              <div
-                style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                className="second_circle"
-              >
+              <p className="average-container-10th">8th Standard</p>
+              <p className="average-container-95">65%</p>
+              <div className="second_circle">
                 <CircularProgressbar value={65} text={`1.5%`} />
               </div>
-              <p style={{ marginBottom: "0px" }}>No.of.Students: 203</p>
+              <p className="average-contain-2-no">No.of.Students: 203</p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px solid #F5F5F5",
-              width: "18%",
-              padding: "2%",
-              display: "flex",
-              justifyContent: "center",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="average-main-container-2">
             <div>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "18px",
-                  fontWeight: "400",
-                  color: "#333333",
-                }}
-              >
-                7th Standard
-              </p>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "24px",
-                  fontWeight: "700",
-                }}
-              >
-                60%
-              </p>
-              <div
-                style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                className="second_circle"
-              >
+              <p className="average-container-10th">7th Standard</p>
+              <p className="average-container-95">60%</p>
+              <div className="second_circle">
                 <CircularProgressbar value={60} text={`1.5%`} />
               </div>
               <p style={{ marginBottom: "0px" }}>No.of.Students: 197</p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px solid #F5F5F5",
-              width: "18%",
-              padding: "2%",
-              display: "flex",
-              justifyContent: "center",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="average-main-container-2">
             <div>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "18px",
-                  fontWeight: "400",
-                  color: "#333333",
-                }}
-              >
-                6th Standard
-              </p>
-              <p
-                style={{
-                  marginTop: "0px",
-                  marginBottom: "0px",
-                  fontSize: "24px",
-                  fontWeight: "700",
-                }}
-              >
-                79%
-              </p>
-              <div
-                style={{ width: "60%", marginLeft: "15%", marginTop: "10px" }}
-                className="first_circle"
-              >
+              <p className="average-container-10th">6th Standard</p>
+              <p className="average-container-95">79%</p>
+              <div className="first_circle">
                 <CircularProgressbar value={79} text={`1.5%`} />
               </div>
-              <p style={{ marginBottom: "0px" }}>No.of.Students: 195</p>
+              <p className="average-contain-2-no">No.of.Students: 195</p>
             </div>
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div
-          style={{
-            width: "65%",
-            backgroundColor: "white",
-            borderRadius: "10px",
-            padding: "1%",
-            margin: "10px",
-          }}
-        >
-          <p style={{ fontSize: "20px", fontWeight: "600" }}>Statistics</p>
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              border: "1.5px solid #F5F5F5",
-              height: "3rem",
-            }}
-          >
+      <div className="Statistics ">
+        <div className="Statistics-container-main1">
+          <p className="Statistics-heading">Statistics</p>
+          <table className="Statistics-table">
             <tbody>
-              <tr
-                style={{
-                  fontWeight: "400",
-                  fontSize: "18px",
-                  textAlign: "center",
-                }}
-              >
-                <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                  Class
-                </th>
-                <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                  No.of.Students
-                </th>
-                <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                  Average Time
-                </th>
-                <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                  Average Score
-                </th>
-                <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                  Rate
-                </th>
+              <tr className="table-body-container-1">
+                <th className="table-body-container-2">Class</th>
+                <th className="table-body-container-2"> No.of.Students</th>
+                <th className="table-body-container-2">Average Time</th>
+                <th className="table-body-container-2">Average Score</th>
+                <th className="table-body-container-2">Rate</th>
               </tr>
               {data.map((value) => {
                 return (
-                  <tr
-                    style={{
-                      // fontFamily: "Nunito",
-                      fontWeight: "400",
-                      fontSize: "16px",
-                      textAlign: "center",
-                    }}
-                    key={value.id}
-                  >
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                        textAlign: "center",
-                      }}
-                    >
-                      {value.class}
-                    </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                      }}
-                    >
-                      {value.noOfStudent}
-                    </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                      }}
-                    >
-                      {value.averageTime}
-                    </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                      }}
-                    >
+                  <tr className="table-body-container-3" key={value.id}>
+                    <td className="table-body-container-4 ">{value.class}</td>
+                    <td className="table-noofstudent">{value.noOfStudent}</td>
+                    <td className="table-noofstudent">{value.averageTime}</td>
+                    <td className="table-noofstudent">
                       <div>{value.averageScore}</div>
                     </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                      }}
-                    >
+                    <td className="table-noofstudent">
                       <div>
-                        {value.rate}{" "}
-                        <img src={Up} style={{ marginTop: "-3px" }} />
+                        {value.rate} <img src={Up} className="table-img" />
                       </div>
                     </td>
                   </tr>
@@ -542,23 +253,9 @@ function DashboardContent() {
             </tbody>
           </table>
         </div>
-        <div
-          style={{
-            width: "35%",
-            backgroundColor: "white",
-            borderRadius: "10px",
-            padding: "1%",
-            margin: "10px",
-            height: "100%",
-          }}
-        >
-            <p style={{ fontSize: "20px", fontWeight: "600",marginBottom:'0px' }}>Calendar</p>
-          <Calendar
-            onChange={onChange}
-            value={value}
-            // style={{ width: "97%" }}
-            className="calendar"
-          />
+        <div className="calendar-main-container">
+          <p className="calendar-para-head">Calendar</p>
+          <Calendar onChange={onChange} value={value} className="calendar" />
         </div>
       </div>
     </div>

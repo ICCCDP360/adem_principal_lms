@@ -11,10 +11,10 @@ import Forgotpassword from "./../pages/auth/signin/Forgotpassword";
 import StudentsMainPage from "../pages/views/Students/StudentsMainPage";
 import ProfileMain from "../pages/views/profile/ProfileMain";
 import Notification from "../pages/views/notification/Notification";
-
+import "../App.scss";
 function IndexRouters() {
   return (
-    <div>
+    <div className="main-route">
       <Routes>
         <Route path="/" element={<Signin />} />
         <Route path="/login_otp" element={<Loginotp />} />

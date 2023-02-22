@@ -1,10 +1,11 @@
 import React from "react";
 import DashboardContent from "./DashboardContent";
 import DashboardHeader from "./DashboardHeader";
+import "./styles/Dashboard.scss";
 
 function Dashboard() {
   return (
-    <div style={{ padding: "1%", width: "100%" }}>
+    <div className="header-dashboard">
       <DashboardHeader />
       <DashboardContent />
     </div>
