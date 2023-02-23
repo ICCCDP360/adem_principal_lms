@@ -7,6 +7,11 @@
     background-color: rgb(245, 245, 245);
     width: 94%;
   }
+  @include xsBreakPoint {
+    background-color: rgb(245, 245, 245);
+    width: 555px;
+    overflow: hidden;
+  }
 }
 
 .header-response {
@@ -30,6 +35,18 @@
       display: contents;
       width: 88%;
     }
+    @include mdBreakPoint {
+      display: contents;
+    }
+    @include xsBreakPoint {
+      display: contents;
+    }
+    @include lgBreakPoint {
+      display: contents;
+    }
+    @include xlBreakPoint {
+      display: contents;
+    }
   }
   .average-container {
     width: 100%;
@@ -41,11 +58,12 @@
       display: flex;
       justify-content: space-around;
       width: 100%;
-      .target-img {
-        // width: 25%;
-      }
+
       .average-content-container {
         width: 100%;
+        // @include xsBreakPoint {
+        //   font-size: x-small;
+        // }
         .average-content {
           margin-bottom: 0px;
           font-size: 20px;
@@ -53,6 +71,7 @@
           color: #333333;
           margin-left: 10%;
         }
+
         .average-subcontent {
           margin-top: 10px;
           font-weight: 700;
@@ -71,6 +90,18 @@
     margin: 10px;
     @include smBreakPoint {
       width: 88%;
+    }
+    @include mdBreakPoint {
+      width: 97%;
+    }
+    @include xsBreakPoint {
+      width: 96%;
+    }
+    @include lgBreakPoint {
+      width: 98%;
+    }
+    @include xlBreakPoint {
+      width: 98%;
     }
     .Preparatory {
       margin-top: 0px;
@@ -137,6 +168,12 @@
 
         margin-left: 23%;
       }
+      @include xsBreakPoint {
+        display: flex;
+        flex-direction: column;
+        width: 1500px;
+        margin-left: 17%;
+      }
     }
     .average-contain-2-Preparatory {
       margin-top: 0px;
@@ -152,6 +189,9 @@
       border-radius: 10px;
       @include smBreakPoint {
         margin-top: 1%;
+      }
+      @include xsBreakPoint {
+        margin-top: 2%;
       }
     }
     .average-container-10th {
@@ -178,8 +218,17 @@
     @include smBreakPoint {
       display: flex;
       flex-direction: column;
-      // width: 732px;
+
       width: 96%;
+    }
+    @include mdBreakPoint {
+      display: contents;
+    }
+    @include xsBreakPoint {
+      display: contents;
+    }
+    @include lgBreakPoint {
+      display: contents;
     }
     .Statistics-container-main1 {
       width: 65%;
@@ -189,6 +238,15 @@
       margin: 10px;
       @include smBreakPoint {
         width: 92%;
+      }
+      @include mdBreakPoint {
+        width: 97%;
+      }
+      @include xsBreakPoint {
+        width: 96%;
+      }
+      @include lgBreakPoint {
+        width: 98%;
       }
     }
     .Statistics-heading {
@@ -236,6 +294,15 @@
       height: 100%;
       @include smBreakPoint {
         width: 92%;
+      }
+      @include mdBreakPoint {
+        width: 97%;
+      }
+      @include xsBreakPoint {
+        width: 96%;
+      }
+      @include lgBreakPoint {
+        width: 98%;
       }
     }
     .calendar-para-head {
