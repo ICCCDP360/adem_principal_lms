@@ -166,7 +166,7 @@ function DashboardContent() {
       </div>
       <div className="average-container2">
         <p className="average-contain-2-Preparatory">
-          Preparatory Courses Performance
+        Foundation Courses Performance
         </p>
         <div className=" average-container-2-response">
           <div className="average-main-container-2">
