@@ -11,6 +11,7 @@ import leftpath from "../../../assests/images/leftpath.svg";
 import rightpath from "../../../assests/images/rightpath.svg";
 import Modal from "react-bootstrap/Modal";
 import { Dropdown } from "react-bootstrap";
+import "./styles/instructor.scss";
 
 import dropdown from "../../../assests/images/dropdown.svg";
 
@@ -85,125 +86,56 @@ function InstructorContent() {
     },
   ];
   return (
-    <div style={{ background: "white", borderRadius: "10px" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          padding: "2rem",
-        }}
-      >
-        <div>
+    <div className="instructor-content-main-container">
+      <div className="instructor-content-main-container-1">
+        <div className="instructor-content-sub-container-0">
           <button
+            className="instructor-content-sub-container"
             onClick={handleShow}
-            style={{
-              background: " #0395C4",
-              borderRadius: "25px",
-              display: "flex",
-              width: "121px",
-              height: "40px",
-              border: "none",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                width: "6rem",
-                alignItems: "center",
-              }}
-            >
+            <div className="instructor-content-sub-container-1">
               <img src={Plus} alt="Plus" />
-              <p
-                style={{
-                  fontWeight: "600",
-                  fontSize: "18px",
-                  color: "white",
-                  marginTop: "0.75rem",
-                }}
-              >
-                Teacher
-              </p>
+              <p className="sub-container-para-1">Teacher</p>
             </div>
           </button>
         </div>
-        <div
-          style={{
-            display: "flex",
-            width: "27.5rem",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              background: "white",
-              border: "1.5px solid black",
-              borderRadius: "25px",
-            }}
-          >
+        <div className="sub-container-main-0">
+          <div className="sub-container-main-1">
             <input
-              style={{
-                width: "250px",
-                height: "37px",
-                border: "none",
-                borderRadius: "25px",
-              }}
+              className="sub-container-main-input"
               type="search"
               id="gsearch"
               name="gsearch"
               onChange={(e) => setSearch(e.target.value)}
             />
-            <img style={{ marginRight: "0.5rem" }} src={Search} alt="Search" />
+            <img className="img-search-instructor" src={Search} alt="Search" />
           </div>
-          <div>
-            <img style={{ paddingRight: "0.5rem" }} src={Sort} alt="Sort" />
-            <img style={{ paddingRight: "0.5rem" }} src={filter} alt="Sort" />
-            <img style={{ paddingRight: "0.5rem" }} src={Download} alt="Sort" />
+          <div className="sub-img-container">
+            <img className="container-img-sub-1" src={Sort} alt="Sort" />
+            <img className="container-img-sub-1" src={filter} alt="Sort" />
+            <img className="container-img-sub-1" src={Download} alt="Sort" />
             <img src={Print} alt="Sort" />
           </div>
         </div>
       </div>
-      <div>
-        <table
-          style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            border: "1.5px solid #F5F5F5",
-            height: "3rem",
-          }}
-        >
+      <div className="instructor-table-main-container-0">
+        <table className="instructor-table-container-1">
           <tbody>
             <tr
-              style={{
-                // fontFamily: "Nunito",
-                fontWeight: "500",
-                fontSize: "16px",
-                textAlign: "center",
-              }}
+              className="instructor-table-tr"
+              // style={{
+              //   // fontFamily: "Nunito",
+              //   fontWeight: "500",
+              //   fontSize: "16px",
+              //   textAlign: "center",
+              // }}
             >
-              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                S.no
-              </th>
-              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Teacher Name
-              </th>
-              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Contact Number
-              </th>
-              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Assigned Class
-              </th>
-              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Assigned Subject
-              </th>
-              <th style={{ border: "1.5px solid #F5F5F5", height: "3rem" }}>
-                Actions
-              </th>
+              <th className="instructor-table-th">S.no</th>
+              <th className="instructor-table-th">Teacher Name</th>
+              <th className="instructor-table-th">Contact Number</th>
+              <th className="instructor-table-th">Assigned Class</th>
+              <th className="instructor-table-th">Assigned Subject</th>
+              <th className="instructor-table-th">Actions</th>
             </tr>
             {data
               .filter((value) => {
@@ -219,99 +151,72 @@ function InstructorContent() {
               .map((value) => {
                 return (
                   <tr
-                    style={{
-                      // fontFamily: "Nunito",
-                      fontWeight: "400",
-                      fontSize: "16px",
-                    }}
+                    className="table-map-tr-0"
+                    // style={{
+                    //   // fontFamily: "Nunito",
+                    //   fontWeight: "400",
+                    //   fontSize: "16px",
+                    // }}
                     key={value.id}
                   >
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                        textAlign: "center",
-                      }}
-                    >
-                      {value.id}
-                    </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                        paddingLeft: "1rem",
-                        textAlign: "center",
-                      }}
-                    >
-                      {value.teacherName}
-                    </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                        paddingLeft: "1rem",
-                        textAlign: "center",
-                      }}
-                    >
-                      {value.contactNumber}
-                    </td>
-                    <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                        paddingLeft: "1rem",
-                        textAlign: "center",
-                      }}
-                    >
+                    <td className="table-map-tr-1">{value.id}</td>
+                    <td className="table-map-tr-2">{value.teacherName}</td>
+                    <td className="table-map-tr-2">{value.contactNumber}</td>
+                    <td className="table-map-tr-2">
                       <div
-                        style={{
-                          width: "2.75rem",
-                          background: "#F5F5F5",
-                          borderRadius: "7px",
-                          paddingLeft: "0.5rem",
-                          // textAlign: "center",
-                        }}
+                        className="table-map-tr-3"
+                        // style={{
+                        //   width: "2.75rem",
+                        //   background: "#F5F5F5",
+                        //   borderRadius: "7px",
+                        //   paddingLeft: "0.5rem",
+                        //   marginLeft: "34%",
+                        // }}
                       >
                         {value.assignedClass}
                       </div>
                     </td>
                     <td
-                      style={{
-                        border: "1.5px solid #F5F5F5",
-                        height: "3rem",
-                        paddingLeft: "1rem",
-                        // textAlign: "center",
-                      }}
+                      className="table-map-tr-4"
+                      // style={{
+                      //   border: "1.5px solid #F5F5F5",
+                      //   height: "3rem",
+                      //   paddingLeft: "1rem",
+                      // }}
                     >
                       <div
-                        style={{
-                          width: "3.5rem",
-                          background: "#F5F5F5",
-                          borderRadius: "7px",
-                          paddingLeft: "0.5rem",
-                          textAlign: "center",
-                        }}
+                        className="table-map-tr-5"
+                        // style={{
+                        //   width: "3.5rem",
+                        //   background: "#F5F5F5",
+                        //   borderRadius: "7px",
+                        //   paddingLeft: "0.5rem",
+                        //   marginLeft: "34%",
+                        // }}
                       >
                         {value.assignedSubject}
                       </div>
                     </td>
                     <td
-                      style={{
-                        border: "1px solid #F5F5F5",
-                        height: "3rem",
-                        display: "flex",
-                        justifyContent: "space-evenly",
-                        textAlign: "center",
-                      }}
+                      className="table-map-tr-6"
+                      // style={{
+                      //   border: "1px solid #F5F5F5",
+                      //   height: "3rem",
+                      //   display: "flex",
+                      //   justifyContent: "space-evenly",
+                      //   textAlign: "center",
+                      // }}
                     >
                       <img
+                        className="img-edit"
                         onClick={handleShow}
-                        style={{ width: "2rem" }}
+                        // style={{ width: "2rem" }}
                         src={Edit}
                         alt="Edit"
                       />
                       <img
-                        style={{ width: "2rem" }}
+                        className="img-edit"
+                        // style={{ width: "2rem" }}
                         src={Delete}
                         alt="delete"
                       />
@@ -322,87 +227,37 @@ function InstructorContent() {
           </tbody>
         </table>
       </div>
-      <div
-        style={{
-          display: "flex",
-          // alignItems: "center",
-          justifyContent: "flex-end",
-          marginTop: "1rem",
-          paddingRight: "1.5rem",
-        }}
-      >
+      <div className="instructor-pagination-1">
         <div>
           <img src={leftpath} alt="left" />
           <img src={leftpath} alt="left" />
         </div>
         <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            width: "10rem",
-          }}
+          className="instructor-pagination-2"
+          // style={{
+          //   display: "flex",
+          //   justifyContent: "space-around",
+          //   width: "10rem",
+          // }}
         >
           <p
-            style={{
-              border: "1px solid #B3E0EE",
-              borderRadius: "50%",
-              width: "1.5rem",
-              textAlign: "center",
-              background: "#B3E0EE",
-              fontSize: "16px",
-              fontWeight: "400",
-            }}
+            className="instructor-pagination-3"
+            // style={{
+            //   border: "1px solid #B3E0EE",
+            //   borderRadius: "50%",
+            //   width: "1.5rem",
+            //   textAlign: "center",
+            //   background: "#B3E0EE",
+            //   fontSize: "16px",
+            //   fontWeight: "400",
+            // }}
           >
             1
           </p>
-          <p
-            style={{
-              border: "1.5px solid #0395C4",
-              borderRadius: "50%",
-              width: "1.5rem",
-              textAlign: "center",
-              fontSize: "16px",
-              fontWeight: "400",
-            }}
-          >
-            2
-          </p>
-          <p
-            style={{
-              border: "1.5px solid #0395C4",
-              borderRadius: "50%",
-              width: "1.5rem",
-              textAlign: "center",
-              fontSize: "16px",
-              fontWeight: "400",
-            }}
-          >
-            3
-          </p>
-          <p
-            style={{
-              border: "1.5px solid #0395C4",
-              borderRadius: "50%",
-              width: "1.5rem",
-              textAlign: "center",
-              fontSize: "16px",
-              fontWeight: "400",
-            }}
-          >
-            4
-          </p>
-          <p
-            style={{
-              border: "1.5px solid #0395C4",
-              borderRadius: "50%",
-              width: "1.5rem",
-              textAlign: "center",
-              fontSize: "16px",
-              fontWeight: "400",
-            }}
-          >
-            5
-          </p>
+          <p className="instructor-pagination-4">2</p>
+          <p className="instructor-pagination-4">3</p>
+          <p className="instructor-pagination-4">4</p>
+          <p className="instructor-pagination-4">5</p>
         </div>
         <div>
           <img src={rightpath} alt="right" />
@@ -410,22 +265,18 @@ function InstructorContent() {
         </div>
       </div>
       <Modal
+        className="modal-instructor-container-1"
         show={show}
         onHide={handleClose}
-        // style={{
-        //   marginTop: "15%",
-        //   width: "70%",
-        // }}
       >
         <Modal.Body>
-          <div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <p style={{ fontSize: "20px", fontWeight: "600" }}>
-                Add Teachers
-              </p>
-              <div></div>
+          <div className="modal-instructor-container-2">
+            <div className="d-flex justify-content-between">
+              <p className="instructor-para">Add Teachers</p>
+
               <div>
                 <button
+                  // className="instructor-close"
                   type="button"
                   class="close"
                   data-dismiss="modal"
@@ -437,145 +288,40 @@ function InstructorContent() {
                 </button>
               </div>
             </div>
-            <div style={{ width: "100%" }}>
-              <p
-                style={{
-                  marginBottom: "0px",
-                  fontSize: "16px",
-                  fontWeight: "500",
-                }}
-              >
-                Name
-              </p>
-              <input
-                value="Jenita"
-                style={{
-                  width: "95%",
-                  padding: "1.5%",
-                  borderRadius: "5px",
-                  border: "1px solid gray",
-                  marginBottom: "2%",
-                  marginTop: "2%",
-                }}
-                type="text"
-              />
+            <div className="w-100">
+              <p className="para-modal-name">Name</p>
+              <input className="modal-input-jeni" value="Jenita" type="text" />
             </div>
-            <div style={{ width: "100%" }}>
-              <p
-                style={{
-                  marginBottom: "0px",
-                  fontSize: "16px",
-                  fontWeight: "500",
-                }}
-              >
-                Mobile Number
-              </p>
-              <input
-                value="7305296087"
-                style={{
-                  width: "95%",
-                  padding: "1.5%",
-                  borderRadius: "5px",
-                  border: "1px solid gray",
-                  marginBottom: "2%",
-                  marginTop: "2%",
-                }}
-                type="number"
-              />
+            <div className="w-100">
+              <p className="para-modal-name">Mobile Number</p>
+              <input className="input-num" value="7305296087" type="number" />
             </div>
-            <div style={{ width: "100%" }}>
-              <p
-                style={{
-                  marginBottom: "0px",
-                  fontSize: "16px",
-                  fontWeight: "500",
-                }}
-              >
-                Select Class
-              </p>
-              <div
-                style={{
-                  width: "95%",
-                  border: "1px solid gray",
-                  marginTop: "2%",
-                  marginBottom: "2%",
-                  borderRadius: "5px",
-                  display: "flex",
-                }}
-              >
-                <input
-                  value="12th"
-                  style={{
-                    width: "90%",
-                    padding: "1.5%",
-                    // borderRadius: "5px",
-                    // border: "1px solid gray",
-                    // marginBottom: "2%",
-                    // marginTop: "2%",
-                    border: "none",
-                  }}
-                  type="text"
-                />
+            <div className="w-100">
+              <p className="para-modal-name">Select Class</p>
+              <div className="select-main-1">
+                <input value="12th" className="input-12th" type="text" />
                 <Dropdown>
-                  <Dropdown.Toggle
-                    style={{
-                      backgroundColor: "transparent",
-                      border: "transparent",
-                    }}
-                  >
+                  <Dropdown.Toggle className="drop-instructor-main-1">
                     <img src={dropdown} alt="dropdown" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu style={{ border: "1.5px  solid #A2A2A2" }}>
+                  <Dropdown.Menu className="dropdown-menu-instructor">
                     <Dropdown.Item>12th</Dropdown.Item>
-                    <Dropdown.Item
-                      style={{
-                        borderTop: "1.5px  solid #A2A2A2",
-                        borderBottom: "1.5px  solid #A2A2A2",
-                      }}
-                    >
-                      11th
-                    </Dropdown.Item>
+                    <Dropdown.Item className="item-1">11th</Dropdown.Item>
                     <Dropdown.Item>10th</Dropdown.Item>
-                    <Dropdown.Item
-                      style={{
-                        borderTop: "1.5px  solid #A2A2A2",
-                      }}
-                    >
-                      9th
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      style={{
-                        borderTop: "1.5px  solid #A2A2A2",
-                      }}
-                    >
-                      8th
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      style={{
-                        borderTop: "1.5px  solid #A2A2A2",
-                      }}
-                    >
-                      7th
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      style={{
-                        borderTop: "1.5px  solid #A2A2A2",
-                      }}
-                    >
-                      6th
-                    </Dropdown.Item>
+                    <Dropdown.Item className="item-2">9th</Dropdown.Item>
+                    <Dropdown.Item className="item-2">8th</Dropdown.Item>
+                    <Dropdown.Item className="item-2">7th</Dropdown.Item>
+                    <Dropdown.Item className="item-2">6th</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
             </div>
             <div>
               <div>
-                <p style={{ fontSize: "16px", fontWeight: "500" }}>
-                  Assign Subject
-                </p>
+                <p className="assign-para">Assign Subject</p>
               </div>
-              <div style={{ display: "flex" }}>
+              <div className="d-flex">
                 <div>
                   <div className="form-check">
                     <input
@@ -602,7 +348,7 @@ function InstructorContent() {
                     </label>
                   </div>
                 </div>
-                <div style={{ marginLeft: "2%" }}>
+                <div className="modal-check-form">
                   <div className="form-check">
                     <input
                       className="form-check-input"
@@ -629,46 +375,12 @@ function InstructorContent() {
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  width: "42%",
-                  justifyContent: "space-between",
-                  marginTop: "4%",
-                }}
-              >
+              <div className="modal-data-1">
                 <div>
-                  <button
-                    style={{
-                      width: "88px",
-                      height: "40px",
-                      fontWeight: "600",
-                      fontSize: "18px",
-                      color: "#FFFFFF",
-                      background: "#0395C4",
-                      borderRadius: "25px",
-                      border: "none",
-                    }}
-                  >
-                    Add
-                  </button>
+                  <button className="modal-data-2">Add</button>
                 </div>
                 <div>
-                  <button
-                    style={{
-                      width: "88px",
-                      height: "40px",
-                      fontWeight: "600",
-                      fontSize: "18px",
-                      color: "#0395C4",
-                      // background: "#0395C4",
-                      borderRadius: "25px",
-                      border: "none",
-                      border: "1.5px solid #0395C4",
-                    }}
-                  >
-                    Cancel
-                  </button>
+                  <button className="modal-data-3">Cancel</button>
                 </div>
               </div>
             </div>
