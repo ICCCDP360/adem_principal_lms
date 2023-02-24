@@ -84,6 +84,9 @@
     justify-content: space-between;
     padding: 2rem;
     .instructor-content-sub-container-0 {
+      @include xsBreakPoint {
+        margin-left: -4%;
+      }
       .instructor-content-sub-container {
         background: #0395c4;
         border-radius: 25px;
@@ -118,6 +121,10 @@
         width: "100%";
       }
       .sub-container-main-1 {
+        @include xsBreakPoint {
+          width: 57%;
+          margin-left: 7%;
+        }
         @include smBreakPoint {
           margin-left: 30%;
           margin-top: -3%;
@@ -138,10 +145,17 @@
         margin-right: 0.5rem;
       }
       .sub-img-container {
+        @include xsBreakPoint {
+          margin-left: 1%;
+        }
         @include smBreakPoint {
           display: none;
         }
         .container-img-sub-1 {
+          @include xsBreakPoint {
+            width: 25%;
+            // margin-left: 3%;
+          }
           padding-right: 0.5rem;
         }
       }
@@ -153,6 +167,10 @@
       border-collapse: collapse;
       border: 1.5px solid #f5f5f5;
       height: 3rem;
+      @include xsBreakPoint {
+        width: 95%;
+        margin-left: 2%;
+      }
       @include smBreakPoint {
         width: 91%;
         margin-left: 4%;
@@ -165,6 +183,9 @@
       .instructor-table-th {
         border: 1.5px solid #f5f5f5;
         height: 3rem;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
         @include smBreakPoint {
           font-size: x-small;
         }
@@ -177,14 +198,23 @@
         border: 1.5px solid #f5f5f5;
         height: 3rem;
         text-align: center;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
       }
       .table-map-tr-2 {
         border: 1.5px solid #f5f5f5;
         height: 3rem;
         padding-left: 1rem;
         text-align: center;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
       }
       .table-map-tr-3 {
+        @include xsBreakPoint {
+          margin-left: 16%;
+        }
         width: 2.75rem;
         background: #f5f5f5;
         border-radius: 7px;
@@ -195,8 +225,14 @@
         border: 1.5px solid #f5f5f5;
         height: 3rem;
         padding-left: 1rem;
+        @include xsBreakPoint {
+          font-size: x-small;
+        }
       }
       .table-map-tr-5 {
+        @include xsBreakPoint {
+          margin-left: 15%;
+        }
         width: 3.5rem;
         background: #f5f5f5;
         border-radius: 7px;

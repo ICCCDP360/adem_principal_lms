@@ -137,14 +137,7 @@ const StuedentsContent = () => {
   ];
   return (
     <div className="student-content-main-container">
-      <div
-        className="student-content-sub-container"
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "space-between",
-        //   padding: "2rem",
-        // }}
-      >
+      <div className="student-content-sub-container">
         <div className="student-content-sub-container-1">
           <Dropdown className="student-content-dropdown">
             <Dropdown.Toggle className="student-content-dropdown-toggle">
