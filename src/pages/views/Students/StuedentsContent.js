@@ -9,132 +9,144 @@ import rightpath from "../../../assests/images/rightpath.svg";
 import dot from "../../../assests/images/3dot.svg";
 import { Dropdown } from "react-bootstrap";
 import "./styles/StudentContent.scss";
-
+import ReactPaginate from "react-paginate";
+const data = [
+  {
+    id: 1,
+    studentName: "Kalai",
+    contactNumber: "77897987878",
+    goAdemId: "13458",
+    rollNumber: "2A765",
+    class: "9",
+    section: "A",
+    assignedTeacher: "malar",
+    Action: "",
+  },
+  {
+    id: 2,
+    studentName: "Sangavi",
+    contactNumber: "7305296087",
+    goAdemId: "09856",
+    rollNumber: "5B786",
+    class: "10",
+    section: "B",
+    assignedTeacher: "mathi",
+    Action: "",
+  },
+  {
+    id: 3,
+    studentName: "Ramesh",
+    contactNumber: "7305296087",
+    goAdemId: "13479",
+    rollNumber: "7A543",
+    class: "12",
+    section: "A",
+    assignedTeacher: "Raj",
+    Action: "",
+  },
+  {
+    id: 4,
+    studentName: "Bhagya",
+    contactNumber: "7305296087",
+    goAdemId: "05648",
+    rollNumber: "6B435",
+    class: "7",
+    section: "B",
+    assignedTeacher: "Naveen",
+    Action: "",
+  },
+  {
+    id: 5,
+    studentName: "Suresh",
+    contactNumber: "7305296087",
+    goAdemId: "12874",
+    rollNumber: "8C543",
+    class: "9",
+    section: "C",
+    assignedTeacher: "Balaji",
+    Action: "",
+  },
+  {
+    id: 6,
+    studentName: "Kanish",
+    contactNumber: "7305296087",
+    goAdemId: "06725",
+    rollNumber: "5A984",
+    class: "12",
+    section: "A",
+    assignedTeacher: "Lokesh",
+    Action: "",
+  },
+  {
+    id: 7,
+    studentName: "Radhana",
+    contactNumber: "7305296087",
+    goAdemId: "09358",
+    rollNumber: "6B372",
+    class: "7",
+    section: "B",
+    assignedTeacher: "Bharathi",
+    Action: "",
+  },
+  {
+    id: 8,
+    studentName: "Aasifa",
+    contactNumber: "7305296087",
+    goAdemId: "17364",
+    rollNumber: "3A654",
+    class: "9",
+    section: "A",
+    assignedTeacher: "Karthika",
+    Action: "",
+  },
+  {
+    id: 9,
+    studentName: "Ganesh",
+    contactNumber: "7305296087",
+    goAdemId: "06845",
+    rollNumber: "6C345",
+    class: "11",
+    section: "C",
+    assignedTeacher: "Prasanth",
+    Action: "",
+  },
+  {
+    id: 10,
+    studentName: "Manoj",
+    contactNumber: "7305296087",
+    goAdemId: "14793",
+    rollNumber: "8A345",
+    class: "7",
+    section: "A",
+    assignedTeacher: "Pavithra",
+    Action: "",
+  },
+  {
+    id: 11,
+    studentName: "Mathi",
+    contactNumber: "7305296087",
+    goAdemId: "07635",
+    rollNumber: "7B543",
+    class: "12",
+    section: "B",
+    assignedTeacher: "Hari",
+    Action: "",
+  },
+];
 const StuedentsContent = () => {
   const [search, setSearch] = useState("");
-  const data = [
-    {
-      id: "1",
-      studentName: "Kalai",
-      contactNumber: "77897987878",
-      goAdemId: "13458",
-      rollNumber: "2A765",
-      class: "9",
-      section: "A",
-      assignedTeacher: "malar",
-      Action: "",
-    },
-    {
-      id: "2",
-      studentName: "Sangavi",
-      contactNumber: "7305296087",
-      goAdemId: "09856",
-      rollNumber: "5B786",
-      class: "10",
-      section: "B",
-      assignedTeacher: "mathi",
-      Action: "",
-    },
-    {
-      id: "3",
-      studentName: "Ramesh",
-      contactNumber: "7305296087",
-      goAdemId: "13479",
-      rollNumber: "7A543",
-      class: "12",
-      section: "A",
-      assignedTeacher: "Raj",
-      Action: "",
-    },
-    {
-      id: "4",
-      studentName: "Bhagya",
-      contactNumber: "7305296087",
-      goAdemId: "05648",
-      rollNumber: "6B435",
-      class: "7",
-      section: "B",
-      assignedTeacher: "Naveen",
-      Action: "",
-    },
-    {
-      id: "5",
-      studentName: "Suresh",
-      contactNumber: "7305296087",
-      goAdemId: "12874",
-      rollNumber: "8C543",
-      class: "9",
-      section: "C",
-      assignedTeacher: "Balaji",
-      Action: "",
-    },
-    {
-      id: "6",
-      studentName: "Kanish",
-      contactNumber: "7305296087",
-      goAdemId: "06725",
-      rollNumber: "5A984",
-      class: "12",
-      section: "A",
-      assignedTeacher: "Lokesh",
-      Action: "",
-    },
-    {
-      id: "7",
-      studentName: "Radhana",
-      contactNumber: "7305296087",
-      goAdemId: "09358",
-      rollNumber: "6B372",
-      class: "7",
-      section: "B",
-      assignedTeacher: "Bharathi",
-      Action: "",
-    },
-    {
-      id: "8",
-      studentName: "Aasifa",
-      contactNumber: "7305296087",
-      goAdemId: "17364",
-      rollNumber: "3A654",
-      class: "9",
-      section: "A",
-      assignedTeacher: "Karthika",
-      Action: "",
-    },
-    {
-      id: "9",
-      studentName: "Ganesh",
-      contactNumber: "7305296087",
-      goAdemId: "06845",
-      rollNumber: "6C345",
-      class: "11",
-      section: "C",
-      assignedTeacher: "Prasanth",
-      Action: "",
-    },
-    {
-      id: "10",
-      studentName: "Manoj",
-      contactNumber: "7305296087",
-      goAdemId: "14793",
-      rollNumber: "8A345",
-      class: "7",
-      section: "A",
-      assignedTeacher: "Pavithra",
-      Action: "",
-    },
-    {
-      id: "11",
-      studentName: "Mathi",
-      contactNumber: "7305296087",
-      goAdemId: "07635",
-      rollNumber: "7B543",
-      class: "12",
-      section: "B",
-      assignedTeacher: "Hari",
-      Action: "",
-    },
-  ];
+  const [posts, setposts] = useState(data.slice(0, 20));
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const userperPage = 5;
+
+  const pagesVisited = pageNumber * userperPage;
+
+  const pageCount = Math.ceil(posts.length / userperPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
   return (
     <div className="student-content-main-container">
       <div className="student-content-sub-container">
@@ -198,10 +210,25 @@ const StuedentsContent = () => {
             <img className="img-search" src={Search} alt="Search" />
           </div>
           <div className="four-img">
-            <img className="sub-img" src={Sort} alt="Sort" />
-            <img className="sub-img" src={filter} alt="Sort" />
-            <img className="sub-img" src={Download} alt="Sort" />
-            <img src={Print} alt="Sort" />
+            <img
+              className="sub-img"
+              src={Sort}
+              alt="Sort"
+              style={{ cursor: "pointer" }}
+            />
+            <img
+              className="sub-img"
+              src={filter}
+              alt="Sort"
+              style={{ cursor: "pointer" }}
+            />
+            <img
+              className="sub-img"
+              src={Download}
+              alt="Sort"
+              style={{ cursor: "pointer" }}
+            />
+            <img src={Print} alt="Sort" style={{ cursor: "pointer" }} />
           </div>
         </div>
       </div>
@@ -224,20 +251,22 @@ const StuedentsContent = () => {
               </th>
               <th className="student-table-th">Actions</th>
             </tr>
-            {data
+            {posts
+
               .filter((value) => {
                 return search.toLowerCase() === ""
                   ? value
                   : value.studentName.toLowerCase().includes(search) ||
                       value.contactNumber.toLowerCase().includes(search) ||
-                      value.Action.toLowerCase().includes(search) ||
                       value.class.toLowerCase().includes(search) ||
                       value.goAdemId.toLowerCase().includes(search) ||
                       value.rollNumber.toLowerCase().includes(search) ||
                       value.section.toLowerCase().includes(search) ||
-                      value.id.toLowerCase().includes(search) ||
+                      // value.id.toLowerCase().includes(search) ||
                       value.assignedTeacher.toLowerCase().includes(search);
               })
+              .slice(pagesVisited, pagesVisited + userperPage)
+
               .map((value) => {
                 return (
                   <tr className="student-table-map-tr" key={value.id}>
@@ -284,7 +313,21 @@ const StuedentsContent = () => {
           </tbody>
         </table>
       </div>
-      <div className="pagination-student-content">
+      <div className="mt-5">
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+        />
+      </div>
+
+      {/* <div className="pagination-student-content">
         <div>
           <img src={leftpath} alt="left" />
           <img src={leftpath} alt="left" />
@@ -300,7 +343,7 @@ const StuedentsContent = () => {
           <img src={rightpath} alt="right" />
           <img src={rightpath} alt="right" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

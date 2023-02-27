@@ -277,3 +277,30 @@
     font-weight: 400;
   }
 }
+
+.paginationBttns {
+  width: 100%;
+  height: 200px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  color: skyblue;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: skyblue;
+}

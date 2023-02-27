@@ -1,3 +1,5 @@
+@use "../../../scss/abstract/" as *;
+
 textarea:focus,
 input:focus {
   outline: none;
@@ -22,6 +24,29 @@ input::-webkit-inner-spin-button {
 .signIn-container {
   background-color: #e6f5f9;
   height: 100vh;
+  @include smBreakPoint {
+    overflow: scroll;
+  }
+  .school-administration {
+    width: 226px;
+    height: 30px;
+    background-color: white;
+    padding: 0%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 41%;
+    margin-top: 3%;
+    @include smBreakPoint {
+      margin-top: 5%;
+      margin-left: 35%;
+    }
+    @include xsBreakPoint {
+      margin-top: 5%;
+      margin-left: 25%;
+    }
+  }
   .register-para {
     margin-top: 0px;
     padding: 2%;
@@ -35,22 +60,51 @@ input::-webkit-inner-spin-button {
     padding-right: 15%;
     display: flex;
     justify-content: space-around;
+    @include smBreakPoint {
+      display: flex;
+      flex-flow: column-reverse;
+      // width: 91%;
+      margin-top: 3%;
+      margin-left: 5%;
+    }
+    @include xsBreakPoint {
+      display: flex;
+      flex-flow: column-reverse;
+      margin-top: 5%;
+    }
     .leftside-container {
       background-color: white;
       width: 100%;
       border-right: 1px solid #e1f1e7;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
+      @include smBreakPoint {
+        border-radius: unset;
+      }
+      @include xsBreakPoint {
+        border-radius: unset;
+      }
       .innerside {
         padding: 8%;
         .signin-header {
           margin-top: 10%;
           font-size: 24px;
+          @include smBreakPoint {
+            font-size: x-small;
+          }
+        }
+        .signin-username {
+          @include smBreakPoint {
+            font-size: xx-small;
+            margin-top: 1%;
+            margin-bottom: 3%;
+          }
         }
         .signin-number {
           margin-top: 10%;
           font-size: 16px;
         }
+
         .number-container {
           display: flex;
           border: 1px solid gray;
@@ -81,7 +135,6 @@ input::-webkit-inner-spin-button {
           font-size: 18px;
           color: white;
           margin-top: 5%;
-          // margin-bottom: 23%;
         }
         .mobile-number {
           margin-top: 2%;
@@ -95,6 +148,12 @@ input::-webkit-inner-spin-button {
       border-top-right-radius: 15px;
       border-bottom-right-radius: 15px;
       padding: 2%;
+      @include smBreakPoint {
+        border-radius: unset;
+      }
+      @include xsBreakPoint {
+        border-radius: unset;
+      }
       .carousel-schrol {
         width: 77%;
         margin-left: 7%;

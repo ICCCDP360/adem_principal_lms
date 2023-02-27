@@ -1,0 +1,196 @@
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-outline:focus {
+  outline: none;
+}
+
+.carousel-dark .carousel-control-prev-icon {
+  filter: blur() !important;
+}
+
+.carousel-dark .carousel-control-next-icon {
+  filter: blur() !important;
+}
+
+.signIn-container {
+  background-color: #e6f5f9;
+  height: 100vh;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container {
+    overflow: scroll;
+  }
+}
+.signIn-container .school-administration {
+  width: 226px;
+  height: 30px;
+  background-color: white;
+  padding: 0%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 41%;
+  margin-top: 3%;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container .school-administration {
+    margin-top: 5%;
+    margin-left: 35%;
+  }
+}
+@media (max-width: 575.98px) {
+  .signIn-container .school-administration {
+    margin-top: 5%;
+    margin-left: 25%;
+  }
+}
+.signIn-container .register-para {
+  margin-top: 0px;
+  padding: 2%;
+  padding-bottom: 0px;
+  text-align: end;
+}
+.signIn-container .center-container {
+  background-color: #e6f5f9;
+  margin-top: 1%;
+  padding-left: 15%;
+  padding-right: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container .center-container {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-top: 3%;
+    margin-left: 5%;
+  }
+}
+@media (max-width: 575.98px) {
+  .signIn-container .center-container {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-top: 5%;
+  }
+}
+.signIn-container .center-container .leftside-container {
+  background-color: white;
+  width: 100%;
+  border-right: 1px solid #e1f1e7;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container .center-container .leftside-container {
+    border-radius: unset;
+  }
+}
+@media (max-width: 575.98px) {
+  .signIn-container .center-container .leftside-container {
+    border-radius: unset;
+  }
+}
+.signIn-container .center-container .leftside-container .innerside {
+  padding: 8%;
+}
+.signIn-container .center-container .leftside-container .innerside .signin-header {
+  margin-top: 10%;
+  font-size: 24px;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container .center-container .leftside-container .innerside .signin-header {
+    font-size: x-small;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container .center-container .leftside-container .innerside .signin-username {
+    font-size: xx-small;
+    margin-top: 1%;
+    margin-bottom: 3%;
+  }
+}
+.signIn-container .center-container .leftside-container .innerside .signin-number {
+  margin-top: 10%;
+  font-size: 16px;
+}
+.signIn-container .center-container .leftside-container .innerside .number-container {
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5%;
+}
+.signIn-container .center-container .leftside-container .innerside .number-container .default-content {
+  width: 7%;
+  border: none;
+  margin-left: 4px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.signIn-container .center-container .leftside-container .innerside .number-container .input-field-number {
+  width: "90%";
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 3%;
+}
+.signIn-container .center-container .leftside-container .innerside .signin-btn {
+  width: 100%;
+  padding: 3%;
+  background-color: #0197c6;
+  border: none;
+  border-radius: 33px;
+  font-size: 18px;
+  color: white;
+  margin-top: 5%;
+}
+.signIn-container .center-container .leftside-container .innerside .mobile-number {
+  margin-top: 2%;
+  font-size: 16px;
+}
+.signIn-container .center-container .rightside-container {
+  background-color: white;
+  width: 100%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 2%;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .signIn-container .center-container .rightside-container {
+    border-radius: unset;
+  }
+}
+@media (max-width: 575.98px) {
+  .signIn-container .center-container .rightside-container {
+    border-radius: unset;
+  }
+}
+.signIn-container .center-container .rightside-container .carousel-schrol {
+  width: 77%;
+  margin-left: 7%;
+  padding: 8%;
+}
+
+.input-field-user {
+  width: "100%";
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 2%;
+}
+
+.user-container {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5%;
+}/*# sourceMappingURL=mainpage.css.map */

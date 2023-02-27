@@ -11,20 +11,7 @@ function Signin() {
   return (
     <div className="signIn-container">
       <img src={logo} style={{ marginLeft: "28px", marginTop: "22px" }} />
-      <div
-        style={{
-          width: "226px",
-          height: "30px",
-          backgroundColor: "white",
-          padding: "0%",
-          borderRadius: "25px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginLeft: "41%",
-          marginTop: "3%",
-        }}
-      >
+      <div className="school-administration">
         <p style={{ fontSize: "18px", fontWeight: "700", marginTop: "5%" }}>
           School Administration
         </p>

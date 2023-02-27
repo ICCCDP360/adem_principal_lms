@@ -12,79 +12,92 @@ import rightpath from "../../../assests/images/rightpath.svg";
 import Modal from "react-bootstrap/Modal";
 import { Dropdown } from "react-bootstrap";
 import "./styles/instructor.scss";
+import ReactPaginate from "react-paginate";
 
 import dropdown from "../../../assests/images/dropdown.svg";
 
+const data = [
+  {
+    id: "1",
+    teacherName: "Kalai",
+    contactNumber: "7305296087",
+    assignedClass: "12th",
+    assignedSubject: "Math",
+    Action: "",
+  },
+  {
+    id: "2",
+    teacherName: "Malai",
+    contactNumber: "8790875643",
+    assignedClass: "9th",
+    assignedSubject: "Science",
+    Action: "",
+  },
+  {
+    id: "3",
+    teacherName: "Malar",
+    contactNumber: "9867543465",
+    assignedClass: "7th",
+    assignedSubject: "Tamil",
+    Action: "",
+  },
+  {
+    id: "4",
+    teacherName: "Bala",
+    contactNumber: "8970564356",
+    assignedClass: "9th",
+    assignedSubject: "English",
+    Action: "",
+  },
+  {
+    id: "5",
+    teacherName: "Indhu",
+    contactNumber: "8870100111",
+    assignedClass: "10th",
+    assignedSubject: "Science",
+    Action: "",
+  },
+  {
+    id: "6",
+    teacherName: "Seenu",
+    contactNumber: "9791837486",
+    assignedClass: "11th",
+    assignedSubject: "English",
+    Action: "",
+  },
+  {
+    id: "7",
+    teacherName: "Manoj",
+    contactNumber: "9842134487",
+    assignedClass: "9th",
+    assignedSubject: "Tamil",
+    Action: "",
+  },
+];
+
 function InstructorContent() {
   const [search, setSearch] = useState("");
-  // const handlesubmit = () => {
-  //   setShowScore(true);
-  //   setShow(false);
-  // };
+
+  const [posts, setposts] = useState(data.slice(0, 20));
+
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const userperPage = 5;
+
+  const pagesVisited = pageNumber * userperPage;
+
+  const pageCount = Math.ceil(posts.length / userperPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const [math, setMath] = useState(false);
 
-  const data = [
-    {
-      id: "1",
-      teacherName: "Kalai",
-      contactNumber: "7305296087",
-      assignedClass: "12th",
-      assignedSubject: "Math",
-      Action: "",
-    },
-    {
-      id: "2",
-      teacherName: "Malai",
-      contactNumber: "8790875643",
-      assignedClass: "9th",
-      assignedSubject: "Science",
-      Action: "",
-    },
-    {
-      id: "3",
-      teacherName: "Malar",
-      contactNumber: "9867543465",
-      assignedClass: "7th",
-      assignedSubject: "Tamil",
-      Action: "",
-    },
-    {
-      id: "4",
-      teacherName: "Bala",
-      contactNumber: "8970564356",
-      assignedClass: "9th",
-      assignedSubject: "English",
-      Action: "",
-    },
-    {
-      id: "5",
-      teacherName: "Indhu",
-      contactNumber: "8870100111",
-      assignedClass: "10th",
-      assignedSubject: "Science",
-      Action: "",
-    },
-    {
-      id: "6",
-      teacherName: "Seenu",
-      contactNumber: "9791837486",
-      assignedClass: "11th",
-      assignedSubject: "English",
-      Action: "",
-    },
-    {
-      id: "7",
-      teacherName: "Manoj",
-      contactNumber: "9842134487",
-      assignedClass: "9th",
-      assignedSubject: "Tamil",
-      Action: "",
-    },
-  ];
   return (
     <div className="instructor-content-main-container">
       <div className="instructor-content-main-container-1">
@@ -111,25 +124,32 @@ function InstructorContent() {
             <img className="img-search-instructor" src={Search} alt="Search" />
           </div>
           <div className="sub-img-container">
-            <img className="container-img-sub-1" src={Sort} alt="Sort" />
-            <img className="container-img-sub-1" src={filter} alt="Sort" />
-            <img className="container-img-sub-1" src={Download} alt="Sort" />
-            <img src={Print} alt="Sort" />
+            <img
+              className="container-img-sub-1"
+              src={Sort}
+              alt="Sort"
+              style={{ cursor: "pointer" }}
+            />
+            <img
+              className="container-img-sub-1"
+              src={filter}
+              alt="Sort"
+              style={{ cursor: "pointer" }}
+            />
+            <img
+              className="container-img-sub-1"
+              src={Download}
+              alt="Sort"
+              style={{ cursor: "pointer" }}
+            />
+            <img src={Print} alt="Sort" style={{ cursor: "pointer" }} />
           </div>
         </div>
       </div>
       <div className="instructor-table-main-container-0">
         <table className="instructor-table-container-1">
           <tbody>
-            <tr
-              className="instructor-table-tr"
-              // style={{
-              //   // fontFamily: "Nunito",
-              //   fontWeight: "500",
-              //   fontSize: "16px",
-              //   textAlign: "center",
-              // }}
-            >
+            <tr className="instructor-table-tr">
               <th className="instructor-table-th">S.no</th>
               <th className="instructor-table-th">Teacher Name</th>
               <th className="instructor-table-th">Contact Number</th>
@@ -137,7 +157,9 @@ function InstructorContent() {
               <th className="instructor-table-th">Assigned Subject</th>
               <th className="instructor-table-th">Actions</th>
             </tr>
-            {data
+            {posts
+              .slice(pagesVisited, pagesVisited + userperPage)
+
               .filter((value) => {
                 return search.toLowerCase() === ""
                   ? value
@@ -150,76 +172,28 @@ function InstructorContent() {
               })
               .map((value) => {
                 return (
-                  <tr
-                    className="table-map-tr-0"
-                    // style={{
-                    //   // fontFamily: "Nunito",
-                    //   fontWeight: "400",
-                    //   fontSize: "16px",
-                    // }}
-                    key={value.id}
-                  >
+                  <tr className="table-map-tr-0" key={value.id}>
                     <td className="table-map-tr-1">{value.id}</td>
                     <td className="table-map-tr-2">{value.teacherName}</td>
                     <td className="table-map-tr-2">{value.contactNumber}</td>
                     <td className="table-map-tr-2">
-                      <div
-                        className="table-map-tr-3"
-                        // style={{
-                        //   width: "2.75rem",
-                        //   background: "#F5F5F5",
-                        //   borderRadius: "7px",
-                        //   paddingLeft: "0.5rem",
-                        //   marginLeft: "34%",
-                        // }}
-                      >
+                      <div className="table-map-tr-3">
                         {value.assignedClass}
                       </div>
                     </td>
-                    <td
-                      className="table-map-tr-4"
-                      // style={{
-                      //   border: "1.5px solid #F5F5F5",
-                      //   height: "3rem",
-                      //   paddingLeft: "1rem",
-                      // }}
-                    >
-                      <div
-                        className="table-map-tr-5"
-                        // style={{
-                        //   width: "3.5rem",
-                        //   background: "#F5F5F5",
-                        //   borderRadius: "7px",
-                        //   paddingLeft: "0.5rem",
-                        //   marginLeft: "34%",
-                        // }}
-                      >
+                    <td className="table-map-tr-4">
+                      <div className="table-map-tr-5">
                         {value.assignedSubject}
                       </div>
                     </td>
-                    <td
-                      className="table-map-tr-6"
-                      // style={{
-                      //   border: "1px solid #F5F5F5",
-                      //   height: "3rem",
-                      //   display: "flex",
-                      //   justifyContent: "space-evenly",
-                      //   textAlign: "center",
-                      // }}
-                    >
+                    <td className="table-map-tr-6">
                       <img
                         className="img-edit"
                         onClick={handleShow}
-                        // style={{ width: "2rem" }}
                         src={Edit}
                         alt="Edit"
                       />
-                      <img
-                        className="img-edit"
-                        // style={{ width: "2rem" }}
-                        src={Delete}
-                        alt="delete"
-                      />
+                      <img className="img-edit" src={Delete} alt="delete" />
                     </td>
                   </tr>
                 );
@@ -227,33 +201,26 @@ function InstructorContent() {
           </tbody>
         </table>
       </div>
-      <div className="instructor-pagination-1">
+      <div className="mt-5">
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+        />
+      </div>
+      {/* <div className="instructor-pagination-1">
         <div>
           <img src={leftpath} alt="left" />
           <img src={leftpath} alt="left" />
         </div>
-        <div
-          className="instructor-pagination-2"
-          // style={{
-          //   display: "flex",
-          //   justifyContent: "space-around",
-          //   width: "10rem",
-          // }}
-        >
-          <p
-            className="instructor-pagination-3"
-            // style={{
-            //   border: "1px solid #B3E0EE",
-            //   borderRadius: "50%",
-            //   width: "1.5rem",
-            //   textAlign: "center",
-            //   background: "#B3E0EE",
-            //   fontSize: "16px",
-            //   fontWeight: "400",
-            // }}
-          >
-            1
-          </p>
+        <div className="instructor-pagination-2">
+          <p className="instructor-pagination-3">1</p>
           <p className="instructor-pagination-4">2</p>
           <p className="instructor-pagination-4">3</p>
           <p className="instructor-pagination-4">4</p>
@@ -263,7 +230,7 @@ function InstructorContent() {
           <img src={rightpath} alt="right" />
           <img src={rightpath} alt="right" />
         </div>
-      </div>
+      </div> */}
       <Modal
         className="modal-instructor-container-1"
         show={show}
@@ -276,7 +243,6 @@ function InstructorContent() {
 
               <div>
                 <button
-                  // className="instructor-close"
                   type="button"
                   class="close"
                   data-dismiss="modal"
