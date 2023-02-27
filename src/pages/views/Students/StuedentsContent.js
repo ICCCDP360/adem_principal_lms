@@ -4,8 +4,8 @@ import Search from "../../../assests/images/search.svg";
 import filter from "../../../assests/images/filter.svg";
 import Print from "../../../assests/images/printfull.svg";
 import Download from "../../../assests/images/download.svg";
-import leftpath from "../../../assests/images/leftpath.svg";
-import rightpath from "../../../assests/images/rightpath.svg";
+import leftpath from "../../../assests/images/left.png";
+import rightpath from "../../../assests/images/right.png";
 import dot from "../../../assests/images/3dot.svg";
 import { Dropdown } from "react-bootstrap";
 import "./styles/StudentContent.scss";
@@ -205,9 +205,15 @@ const StuedentsContent = () => {
               type="search"
               id="gsearch"
               name="gsearch"
+              style={{ cursor: "pointer" }}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <img className="img-search" src={Search} alt="Search" />
+            <img
+              className="img-search"
+              style={{ cursor: "pointer" }}
+              src={Search}
+              alt="Search"
+            />
           </div>
           <div className="four-img">
             <img
@@ -313,10 +319,10 @@ const StuedentsContent = () => {
           </tbody>
         </table>
       </div>
-      <div className="mt-5">
+      <div className="mt-5" style={{ marginRight: "35px" }}>
         <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
+          previousLabel={<img src={leftpath} alt="left" />}
+          nextLabel={<img src={rightpath} />}
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={"paginationBttns"}
@@ -326,24 +332,6 @@ const StuedentsContent = () => {
           activeClassName={"paginationActive"}
         />
       </div>
-
-      {/* <div className="pagination-student-content">
-        <div>
-          <img src={leftpath} alt="left" />
-          <img src={leftpath} alt="left" />
-        </div>
-        <div className="pagination-subcontent">
-          <p className="pagination-subcontent-1">1</p>
-          <p className="pagination-subcontent-2">2</p>
-          <p className="pagination-subcontent-2">3</p>
-          <p className="pagination-subcontent-2">4</p>
-          <p className="pagination-subcontent-2">5</p>
-        </div>
-        <div>
-          <img src={rightpath} alt="right" />
-          <img src={rightpath} alt="right" />
-        </div>
-      </div> */}
     </div>
   );
 };

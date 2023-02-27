@@ -65,7 +65,11 @@ const StudentsHeader = () => {
             </Dropdown>
           </div>
           <div>
-            <img className="student-head-img-2" src={School} />
+            <img
+              className="student-head-img-2"
+              src={School}
+              onClick={() => navigate("/profile")}
+            />
           </div>
         </div>
       </div>

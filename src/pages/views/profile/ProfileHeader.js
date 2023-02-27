@@ -8,135 +8,51 @@ import { Dropdown } from "react-bootstrap";
 function ProfileHeader() {
   const navigate = useNavigate();
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ marginLeft: "1%" }}>
-          <p
-            style={{
-              fontSize: "24px",
-              fontWeight: "700",
-              color: "#333333",
-              marginTop: "0px",
-              marginBottom: "0px",
-            }}
-          >
-            Profile
-          </p>
+    <div className="profile-header-main-container">
+      <div className="profile-sub-container-1">
+        <div className="main-div-1">
+          <p className="main-div-para-1">Profile</p>
         </div>
-        <div
-          style={{ display: "flex", paddingBottom: "0px", paddingRight: "1%" }}
-        >
-          <div style={{ marginRight: "30px" }}>
+        <div className="main-div-2">
+          <div className="drop-profile-div-1">
             <Dropdown>
-              <Dropdown.Toggle
-                style={{
-                  backgroundColor: "transparent",
-                  border: "transparent",
-                }}
-              >
+              <Dropdown.Toggle className="drp-toggle">
                 <img src={Notification} />
               </Dropdown.Toggle>
 
-              <Dropdown.Menu
-                style={{
-                  width: "310px",
-                  marginLeft: "-250px",
-                  cursor: "pointer",
-                }}
-              >
-                <div
-                  style={{
-                    paddingLeft: "5%",
-                    fontSize: "18px",
-                    fontWeight: "600",
-                    paddingRight: "5%",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <p style={{ marginBottom: "0px" }}>Content_Admin</p>
-                    <p style={{ marginBottom: "0px" }}>01:00</p>
+              <Dropdown.Menu className="drp-menu">
+                <div className="drp-sub-1">
+                  <div className="d-flex justify-content-between">
+                    <p className="content-para-header">Content_Admin</p>
+                    <p className="content-para-header">01:00</p>
                   </div>
-                  <p style={{ marginBottom: "0px", fontSize: "17px" }}>
+                  <p className="content-para-header-new">
                     New videos was uploaded on th...
                   </p>
                 </div>
-                <hr
-                  style={{
-                    marginTop: "5px",
-                    borderTop: "2px solid gray",
-                    marginBottom: "5px",
-                  }}
-                />
-                <div
-                  style={{
-                    paddingLeft: "5%",
-                    fontSize: "18px",
-                    fontWeight: "600",
-                    paddingRight: "5%",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <p style={{ marginBottom: "0px" }}>Content_Admin</p>
-                    <p style={{ marginBottom: "0px" }}>02:38</p>
+                <hr className="hr-header" />
+                <div className="drp-sub-1">
+                  <div className="d-flex justify-content-between">
+                    <p className="content-para-header">Content_Admin</p>
+                    <p className="content-para-header">02:38</p>
                   </div>
-                  <p style={{ marginBottom: "0px", fontSize: "17px" }}>
+                  <p className="content-para-header-new">
                     New lesson was added in chemistry
                   </p>
                 </div>
-                <hr
-                  style={{
-                    marginTop: "5px",
-                    borderTop: "2px solid gray",
-                    marginBottom: "5px",
-                  }}
-                />
-                <div
-                  style={{
-                    paddingLeft: "5%",
-                    fontSize: "18px",
-                    fontWeight: "600",
-                    paddingRight: "5%",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <p style={{ marginBottom: "0px" }}>SPOC</p>
-                    <p style={{ marginBottom: "0px" }}>12:30</p>
+                <hr className="hr-header" />
+                <div className="drp-sub-1">
+                  <div className="d-flex justify-content-between">
+                    <p className="content-para-header">SPOC</p>
+                    <p className="content-para-header">12:30</p>
                   </div>
-                  <p style={{ marginBottom: "0px", fontSize: "17px" }}>
+                  <p className="content-para-header-new">
                     New videos was uploaded on th...
                   </p>
                 </div>
-                <hr
-                  style={{
-                    marginTop: "5px",
-                    borderTop: "2px solid gray",
-                    marginBottom: "5px",
-                  }}
-                />
+                <hr className="hr-header" />
                 <p
-                  //   onClick={() => navigate("/notification")}
-                  style={{
-                    fontSize: "18px",
-                    fontWeight: "600",
-                    color: "#0395C4",
-                    paddingLeft: "5%",
-                    marginBottom: "5px",
-                  }}
+                  className="view-para"
                   onClick={() => navigate("/notification")}
                 >
                   View all

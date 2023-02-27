@@ -1,3 +1,60 @@
+.profile-header-main-container .profile-sub-container-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-header-main-container .profile-sub-container-1 .main-div-1 {
+  margin-left: 1%;
+}
+.profile-header-main-container .profile-sub-container-1 .main-div-1 .main-div-para-1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.profile-header-main-container .profile-sub-container-1 .main-div-2 {
+  display: flex;
+  padding-bottom: 0px;
+  padding-right: 1%;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 {
+  margin-right: 30px;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .drp-toggle {
+  background-color: transparent;
+  border: transparent;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .drp-menu {
+  width: 310px;
+  margin-left: -250px;
+  cursor: pointer;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .drp-sub-1 {
+  padding-left: 5%;
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 5%;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .content-para-header {
+  margin-bottom: 0px;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .content-para-header-new {
+  margin-bottom: 0px;
+  font-size: 17px;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .hr-header {
+  margin-top: 5px;
+  border-top: 2px solid gray;
+  margin-bottom: 5px;
+}
+.profile-header-main-container .profile-sub-container-1 .drop-profile-div-1 .view-para {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0395c4;
+  padding-left: 5%;
+  margin-bottom: 5px;
+}
+
 .profile-content-main-container-1 {
   width: 96%;
   background: white;
@@ -35,10 +92,24 @@
   margin-bottom: 0px;
   width: 240px;
 }
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .profile-content-main-container-1 .profile-content-container-1 .profile-content-container-2 .profile-para {
+    font-size: xx-small;
+    margin-left: 65%;
+    margin-top: 4%;
+  }
+}
 .profile-content-main-container-1 .profile-content-container-1 .profile-content-container-2 .profile-para-1 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 0px;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .profile-content-main-container-1 .profile-content-container-1 .profile-content-container-2 .profile-para-1 {
+    font-size: xx-small;
+    margin-left: 1%;
+    margin-top: 2%;
+  }
 }
 .profile-content-main-container-1 .profile-content-main-container-2 {
   width: 75%;
@@ -50,4 +121,15 @@
 .profile-content-main-container-1 .profile-content-main-container-2 .school-info {
   font-size: 20px;
   font-weight: 700;
+}
+.profile-content-main-container-1 .profile-content-main-container-2 .para-profile-content {
+  margin-bottom: 0px;
+}
+.profile-content-main-container-1 .profile-content-main-container-2 .input-data-1 {
+  width: 95%;
+  padding: 1.5%;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 2%;
+  background-color: #f5f5f5;
 }/*# sourceMappingURL=profileheader.css.map */

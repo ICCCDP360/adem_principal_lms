@@ -106,15 +106,7 @@ function InstructorsHeader() {
                 </div>
                 <hr className="hr-instructor-header " />
                 <p
-                  //   onClick={() => navigate("/notification")}
                   className="view-instructor-all"
-                  // style={{
-                  //   fontSize: "18px",
-                  //   fontWeight: "600",
-                  //   color: "#0395C4",
-                  //   paddingLeft: "5%",
-                  //   marginBottom: "5px",
-                  // }}
                   onClick={() => navigate("/notification")}
                 >
                   View all
@@ -123,12 +115,7 @@ function InstructorsHeader() {
             </Dropdown>
           </div>
           <div>
-            <img
-              className="school-img"
-              src={School}
-              // style={{ cursor: "pointer", marginTop: "0.35rem" }}
-              onClick={Schoolprofile}
-            />
+            <img className="school-img" src={School} onClick={Schoolprofile} />
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@ import Print from "../../../assests/images/printfull.svg";
 import Download from "../../../assests/images/download.svg";
 import Delete from "../../../assests/images/delete.svg";
 import Edit from "../../../assests/images/edit.svg";
-import leftpath from "../../../assests/images/leftpath.svg";
-import rightpath from "../../../assests/images/rightpath.svg";
+import leftpath from "../../../assests/images/left.png";
+import rightpath from "../../../assests/images/right.png";
 import Modal from "react-bootstrap/Modal";
 import { Dropdown } from "react-bootstrap";
 import "./styles/instructor.scss";
@@ -120,8 +120,14 @@ function InstructorContent() {
               id="gsearch"
               name="gsearch"
               onChange={(e) => setSearch(e.target.value)}
+              style={{ cursor: "pointer" }}
             />
-            <img className="img-search-instructor" src={Search} alt="Search" />
+            <img
+              className="img-search-instructor"
+              style={{ cursor: "pointer" }}
+              src={Search}
+              alt="Search"
+            />
           </div>
           <div className="sub-img-container">
             <img
@@ -192,8 +198,14 @@ function InstructorContent() {
                         onClick={handleShow}
                         src={Edit}
                         alt="Edit"
+                        style={{ cursor: "pointer" }}
                       />
-                      <img className="img-edit" src={Delete} alt="delete" />
+                      <img
+                        className="img-edit"
+                        style={{ cursor: "pointer" }}
+                        src={Delete}
+                        alt="delete"
+                      />
                     </td>
                   </tr>
                 );
@@ -201,10 +213,10 @@ function InstructorContent() {
           </tbody>
         </table>
       </div>
-      <div className="mt-5">
+      <div className="mt-5" style={{ marginRight: "35px" }}>
         <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
+          previousLabel={<img src={leftpath} />}
+          nextLabel={<img src={rightpath} />}
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={"paginationBttns"}
