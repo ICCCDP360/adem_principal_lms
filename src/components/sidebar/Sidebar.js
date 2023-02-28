@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Sidebar.scss";
-import AdamLogo from "../../assests/images/adamLogo.svg";
+import AdamLogo from "../../assests/images/ADEMnewLogo-01 1.svg";
 import dashboardWhite from "../../assests/images/dashboardWhite.svg";
 import dashboardBlack from "../../assests/images/dashboardBlack.svg";
 import contentWhite from "../../assests/images/contentWhite.svg";
@@ -42,7 +42,7 @@ function Sidebar() {
               style={{ cursor: "pointer" }}
               onClick={() => navigate("/dashboard")}
             >
-              <img src={AdamLogo} className="header-logo" />
+              <img src={AdamLogo} className="header-logo mt-4" />
             </div>
             <div className="header-divider-container">
               <hr className="divider-line" />
