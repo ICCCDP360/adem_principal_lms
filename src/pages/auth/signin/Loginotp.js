@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../../assests/images/adems_logo.svg";
+import logo from "../../../assests/images/ADEMnewLogo-01 1.svg";
 import "../styles/loginotp.scss";
 import Slideshow from "../../views/components/Slider.js/SliderShow";
 import { SliderData } from "../../views/components/Slider.js/SliderData";
