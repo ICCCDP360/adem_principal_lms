@@ -96,17 +96,56 @@
         font-weight: 700;
         margin-bottom: 0px;
         width: 240px;
+        @include xsBreakPoint {
+          font-size: xx-small;
+          margin-left: 70%;
+          margin-top: 5%;
+        }
         @include smBreakPoint {
           font-size: xx-small;
           margin-left: 65%;
           margin-top: 4%;
+        }
+        @include mdBreakPoint {
+          font-size: xx-small;
+          margin-left: 70%;
+          margin-top: 5%;
+        }
+        @include lgBreakPoint {
+          font-size: xx-small;
+          margin-left: 65%;
+          margin-top: 5%;
+        }
+        @include xlBreakPoint {
+          font-size: xx-small;
+          margin-left: 65%;
+          margin-top: 5%;
         }
       }
       .profile-para-1 {
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 0px;
+        @include lgBreakPoint {
+          font-size: xx-small;
+          margin-left: 2%;
+          margin-top: 5%;
+        }
+        @include mdBreakPoint {
+          font-size: xx-small;
+          margin-left: 5%;
+          margin-top: 3%;
+        }
+        @include xsBreakPoint {
+          font-size: xx-small;
+          margin-left: 3%;
+        }
         @include smBreakPoint {
+          font-size: xx-small;
+          margin-left: 1%;
+          margin-top: 2%;
+        }
+        @include xlBreakPoint {
           font-size: xx-small;
           margin-left: 1%;
           margin-top: 2%;

@@ -4,7 +4,7 @@ import InstructorsHeader from "./InstructorsHeader";
 
 function InstructorMainPage() {
   return (
-    <div style={{ padding: "1%", width: "100%" }}>
+    <div className="instructor-mainpage-container">
       <InstructorsHeader />
       <InstructorContent />
     </div>
