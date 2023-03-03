@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Notification from "../../../assests/images/notify.svg";
 import School from "../../../assests/images/school.svg";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,11 @@ import "./styles/instructor.scss";
 
 function InstructorsHeader() {
   const navigate = useNavigate();
-
+  const [schoolDetails, SetSchoolDetails] = useState("");
+  useEffect(() => {
+    const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails(Data);
+  }, []);
   function Schoolprofile() {
     navigate("/profile");
   }
@@ -115,7 +119,18 @@ function InstructorsHeader() {
             </Dropdown>
           </div>
           <div>
-            <img className="school-img" src={School} onClick={Schoolprofile} />
+            <img
+              src={schoolDetails?.logo}
+              width="30px"
+              height="30px"
+              className="school-img"
+              style={{
+                cursor: "pointer",
+                marginTop: "0.35rem",
+                borderRadius: "50%",
+              }}
+              onClick={Schoolprofile}
+            />
           </div>
         </div>
       </div>

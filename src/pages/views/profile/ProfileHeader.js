@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import School from "../../../assests/images/school.svg";
 import Notification from "../../../assests/images/notify.svg";
 import { useNavigate } from "react-router";
@@ -7,6 +7,11 @@ import { Dropdown } from "react-bootstrap";
 
 function ProfileHeader() {
   const navigate = useNavigate();
+  const [schoolDetails, SetSchoolDetails] = useState("");
+  useEffect(() => {
+    const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails(Data);
+  }, []);
   return (
     <div className="profile-header-main-container">
       <div className="profile-sub-container-1">
@@ -62,8 +67,14 @@ function ProfileHeader() {
           </div>
           <div>
             <img
-              src={School}
-              style={{ cursor: "pointer" }}
+              src={schoolDetails?.logo}
+              width="30px"
+              height="30px"
+              style={{
+                cursor: "pointer",
+                marginTop: "0.35rem",
+                borderRadius: "50%",
+              }}
               // onClick={Schoolprofile}
             />
           </div>

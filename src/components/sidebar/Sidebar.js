@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/Sidebar.scss";
 import AdamLogo from "../../assests/images/ADEMnewLogo-01 1.svg";
 import dashboardWhite from "../../assests/images/dashboardWhite.svg";
@@ -20,7 +20,11 @@ function Sidebar() {
   const dashboardPage = () => {
     navigate("/dashboard");
   };
-
+  const [schoolDetails, SetSchoolDetails] = useState("");
+  useEffect(() => {
+    const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails(Data);
+  }, []);
   const contentPage = () => {
     navigate("/instructor");
   };
@@ -42,7 +46,13 @@ function Sidebar() {
               style={{ cursor: "pointer" }}
               onClick={() => navigate("/dashboard")}
             >
-              <img src={AdamLogo} className="header-logo mt-4" />
+              <img
+                src={schoolDetails?.logo}
+                alt="school logo"
+                width="80px"
+                height="80px"
+                className="header-logo mt-4"
+              />
             </div>
             <div className="header-divider-container">
               <hr className="divider-line" />

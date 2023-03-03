@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../assests/images/ADEMnewLogo-01 1.svg";
 
 import "../styles/mainpage.scss";
 import Slideshow from "./../../views/components/Slider.js/SliderShow";
 import { SliderData } from "./../../views/components/Slider.js/SliderData";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Signin() {
   const navigate = useNavigate();
+  const [schoolId, SetSchoolID] = useState("");
+  const [schoolPasscode, SetSchoolPasscode] = useState("");
+  const APISignin = () => {
+    axios
+      .post("https://backend.goadem.com/api/v1/school/signin", {
+        sch_id: schoolId,
+        passcode: schoolPasscode,
+      })
+      .then((response) => {
+        localStorage.setItem("accessToken", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.SchoolFound));
+        navigate("dashboard");
+      });
+  };
   return (
     <div className="signIn-container">
       <img src={logo} style={{ marginLeft: "28px", marginTop: "22px" }} />
@@ -23,6 +38,10 @@ function Signin() {
             <p className="signin-username">User Name</p>
             <div className="user-container">
               <input
+                onChange={(e) => {
+                  SetSchoolID(e.target.value);
+                  console.log(e.target.value);
+                }}
                 className="input-field-user"
                 type="text"
                 placeholder="Enter username"
@@ -31,6 +50,10 @@ function Signin() {
             <p className="signin-username"> Password</p>
             <div className="user-container">
               <input
+                onChange={(e) => {
+                  SetSchoolPasscode(e.target.value);
+                  console.log(e.target.value);
+                }}
                 className="input-field-user"
                 type="password"
                 placeholder=" Password"
@@ -43,10 +66,7 @@ function Signin() {
             >
               Forgot Password ?
             </p>
-            <button
-              className="signin-btn"
-              onClick={() => navigate("dashboard")}
-            >
+            <button className="signin-btn" onClick={APISignin}>
               Sign in
             </button>
           </div>
