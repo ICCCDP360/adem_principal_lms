@@ -13,7 +13,14 @@ function Footer() {
         color: "gray",
       }}
     >
-      @Copyright CDP360 2023 -- All Rights Reserved
+      <a
+        style={{ color: "gray" }}
+        href="https://cdp360.com/"
+        target={"_blank"}
+        rel="noreferrer"
+      >
+        Powered by CDP360 Technologies Pvt Ltd
+      </a>
     </div>
   );
 }
