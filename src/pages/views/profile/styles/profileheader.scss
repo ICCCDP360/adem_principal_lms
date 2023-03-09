@@ -95,7 +95,8 @@
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 0px;
-        width: 240px;
+        justify-content: center;
+        width: 280px;
         @include xsBreakPoint {
           font-size: xx-small;
           margin-left: 70%;
@@ -103,7 +104,7 @@
         }
         @include smBreakPoint {
           font-size: xx-small;
-          margin-left: 65%;
+          margin-left: 25%;
           margin-top: 4%;
         }
         @include mdBreakPoint {

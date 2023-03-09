@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Notification from "../../../assests/images/notify.svg";
 import School from "../../../assests/images/school.svg";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,11 @@ import { Dropdown } from "react-bootstrap";
 import "./styles/Dashboard.scss";
 
 function DashboardHeader() {
+  const [schoolDetails, SetSchoolDetails] = useState("");
+  useEffect(() => {
+    const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails(Data);
+  }, []);
   const navigate = useNavigate();
 
   function Schoolprofile() {
@@ -24,7 +29,7 @@ function DashboardHeader() {
               marginBottom: "0px",
             }}
           >
-            Welcome, Xavier Matriculation School
+            Welcome, {schoolDetails.sch_name}
           </p>
           <p
             style={{
@@ -158,8 +163,14 @@ function DashboardHeader() {
           </div>
           <div>
             <img
-              src={School}
-              style={{ cursor: "pointer", marginTop: "0.35rem" }}
+              src={schoolDetails?.logo}
+              width="30px"
+              height="30px"
+              style={{
+                cursor: "pointer",
+                marginTop: "0.35rem",
+                borderRadius: "50%",
+              }}
               onClick={Schoolprofile}
             />
           </div>

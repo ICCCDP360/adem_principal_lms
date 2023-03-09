@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Profiles from "../../../assests/images/school.svg";
 import proof from "../../../assests/images/Frame 2148.svg";
 
 function ProfileContent() {
+  const [schoolDetails, SetSchoolDetails] = useState("");
+  useEffect(() => {
+    const Data = JSON.parse(localStorage.getItem("user"));
+    SetSchoolDetails(Data);
+  }, []);
   return (
     <div className="profile-content-main-container-1">
       <div className="profile-content-container-1">
         <div className="profile-content-container-2">
-          <img className="profile-img" src={Profiles} alt="Profile" />
-          <p className="profile-para">Xavier Matriculation</p>
-          <p className="profile-para-1">School</p>
+          <img className="profile-img" src={schoolDetails.logo} alt="Profile" />
+          <p className="profile-para">{schoolDetails.sch_name}</p>
+          {/* <p className="profile-para-1">School</p> */}
         </div>
       </div>
       <div className="profile-content-main-container-2">
@@ -17,18 +22,26 @@ function ProfileContent() {
         <div className="d-flex justify-content-between w">
           <div className="w-100">
             <p className="para-profile-content">Principal Name</p>
-            <input className="input-data-1" value="Bala" type="text" />
+            <input
+              className="input-data-1"
+              value={schoolDetails.user_name}
+              type="text"
+            />
           </div>
           <div className="w-100">
             <p className="para-profile-content">SPOC Name</p>
-            <input value="kalai" className="input-data-1" type="text" />
+            <input
+              value={schoolDetails.goadem_admin}
+              className="input-data-1"
+              type="text"
+            />
           </div>
         </div>
         <div className="d-flex justify-content-between w-100">
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">School Name</p>
             <input
-              value="Xavier matriculation school"
+              value={schoolDetails.sch_name}
               className="input-data-1"
               type="text"
             />
@@ -36,7 +49,7 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">Contact Number</p>
             <input
-              value="868768767678"
+              value={schoolDetails?.ph_num}
               className="input-data-1"
               type="number"
             />
@@ -46,14 +59,18 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">School Email</p>
             <input
-              value="xavier@edu.org"
+              value={schoolDetails?.email}
               className="input-data-1"
               type="text"
             />
           </div>
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">Date Of Joining</p>
-            <input value="28/11/2000" className="input-data-1" type="text" />
+            <input
+              value={schoolDetails?.dt}
+              className="input-data-1"
+              type="text"
+            />
           </div>
         </div>
 
@@ -61,24 +78,36 @@ function ProfileContent() {
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">Address</p>
             <input
-              value="2nd cross street, Elim Nagar."
+              value={schoolDetails?.address}
               className="input-data-1"
               type="text"
             />
           </div>
           <div style={{ width: "100%" }}>
             <p className="para-profile-content">City </p>
-            <input value="chennai" className="input-data-1" type="text" />
+            <input
+              value={schoolDetails?.city}
+              className="input-data-1"
+              type="text"
+            />
           </div>
         </div>
         <div className="d-flex justify-content-center w-100">
           <div className="w-100">
             <p className="para-profile-content">Pincode</p>
-            <input value="6000001" className="input-data-1" type="text" />
+            <input
+              value={schoolDetails?.pincode}
+              className="input-data-1"
+              type="text"
+            />
           </div>
           <div className="w-100">
             <p className="para-profile-content">State</p>
-            <input value="Tamilnadu" className="input-data-1" type="text" />
+            <input
+              value={schoolDetails?.state}
+              className="input-data-1"
+              type="text"
+            />
           </div>
         </div>
 
