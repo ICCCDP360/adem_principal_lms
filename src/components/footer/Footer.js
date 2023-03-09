@@ -1,18 +1,34 @@
 import React from "react";
-
+// import "./styles/footer.scss";
+import CDPLogo from "../../assests/images/Screenshot 2023-03-09 122511.png";
 function Footer() {
   return (
     <div
       style={{
-        textAlign: "end",
-        padding: "1%",
-        paddingBottom: "0%",
+        backgroundColor: "white",
+        width: "100%",
+        textAlign: "center",
+        padding: "0.1%",
+        // paddingBottom: "1%",
         fontSize: "13px",
         fontWeight: "600",
-        color: "gray",
+        position: "fixed",
+        bottom: "1px",
+        // color: "gray",
       }}
     >
-      Powered by GoAdem
+      <a
+        style={{ textDecoration: "none" }}
+        href="https://cdp360.com/"
+        target={"_blank"}
+        rel="noreferrer"
+      >
+        <img
+          src={CDPLogo}
+          style={{ width: "3%", marginRight: "5px", marginLeft: "3px" }}
+        />
+        Powered by CDP360 Technologies Pvt Ltd
+      </a>
     </div>
   );
 }
