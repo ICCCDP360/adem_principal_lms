@@ -76,7 +76,7 @@ function DashboardContent() {
     <div className="main-container">
       <div className=" main-contain-responsive">
         <div className=" main-container-2-response">
-          <div className="d-flex ">
+          <div className="main-dash-content d-flex ">
             <div className="average-container">
               <div className="average-inside-container">
                 <img src={Trophy} className="target-img" />
@@ -102,7 +102,7 @@ function DashboardContent() {
               </div>
             </div>
           </div>
-          <div style={{ width: "100%", display: "flex" }}>
+          <div className="data-container-card">
             <div className="average-container">
               <div className="average-inside-container">
                 <img src={Clock} className="target-img" />
@@ -166,7 +166,7 @@ function DashboardContent() {
       </div>
       <div className="average-container2">
         <p className="average-contain-2-Preparatory">
-        Foundation Courses Performance
+          Foundation Courses Performance
         </p>
         <div className=" average-container-2-response">
           <div className="average-main-container-2">

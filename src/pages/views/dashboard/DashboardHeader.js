@@ -21,13 +21,14 @@ function DashboardHeader() {
       <div className="header-response">
         <div style={{ marginLeft: "1%" }}>
           <p
-            style={{
-              fontSize: "24px",
-              fontWeight: "700",
-              color: "#333333",
-              marginTop: "0px",
-              marginBottom: "0px",
-            }}
+            className="profile_header"
+            // style={{
+            //   fontSize: "24px",
+            //   fontWeight: "700",
+            //   color: "#333333",
+            //   marginTop: "0px",
+            //   marginBottom: "0px",
+            // }}
           >
             Welcome, {schoolDetails.sch_name}
           </p>
@@ -43,7 +44,7 @@ function DashboardHeader() {
           </p>
         </div>
         <div style={{ display: "flex", padding: "1%", paddingBottom: "0px" }}>
-          <div style={{ marginRight: "30px" }}>
+          <div className="notify">
             <Dropdown>
               <Dropdown.Toggle
                 style={{

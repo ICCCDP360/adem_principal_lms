@@ -1,72 +1,64 @@
 import React from "react";
-
+import "./styles/notification.scss";
+import { Table } from "react-bootstrap";
 function NotificationContent() {
-  const language = localStorage.getItem("lang");
-
+  const data = [
+    {
+      id: 1,
+      title: "Content Admin",
+      subdata: "New videos was uploaded on thermodynamics for class 6.",
+      timer: "01:00",
+    },
+    {
+      id: 2,
+      title: "Content Admin",
+      subdata: "New lesson was added in chemistry.",
+      timer: "03:32",
+    },
+    {
+      id: 3,
+      title: "SPOC",
+      subdata: "Your question on thermodynamics was answered.",
+      timer: "12:28",
+    },
+    {
+      id: 4,
+      title: "Content Admin",
+      subdata: "Your question on thermodynamics was answered.",
+      timer: "04:08",
+    },
+  ];
   return (
-    <div style={{ width: "100%", padding: "1%", paddingTop: "0.5%" }}>
-      <div style={{ backgroundColor: "white", borderRadius: "10px" }}>
-        <div
-          style={{
-            padding: "1%",
-            display: "flex",
-            justifyContent: "space-between",
-            borderBottom: "1px solid #F5F5F5",
-            width: "98%",
-          }}
-        >
-          <h5 style={{ fontSize: "17px", fontWeight: "600" }}>Content Admin</h5>
-          <h5 style={{ fontSize: "15px", fontWeight: "500" }}>
-            New videos was uploaded on thermodynamics for class 6.
-          </h5>
-          <h5 style={{ fontSize: "18px", fontWeight: "600" }}>01:00</h5>
-        </div>
-        <div
-          style={{
-            padding: "1%",
-            display: "flex",
-            justifyContent: "space-between",
-            borderBottom: "1px solid #F5F5F5",
-            width: "98%",
-          }}
-        >
-          <h5 style={{ fontSize: "17px", fontWeight: "600" }}>Content Admin</h5>
-          <h5 style={{ fontSize: "15px", fontWeight: "500" }}>
-            New lesson was added in chemistry.
-          </h5>
-          <h5 style={{ fontSize: "18px", fontWeight: "600" }}> 03:32</h5>
-        </div>
-        <div
-          style={{
-            padding: "1%",
-            display: "flex",
-            justifyContent: "space-between",
-            borderBottom: "1px solid #F5F5F5",
-            width: "98%",
-          }}
-        >
-          <h5 style={{ fontSize: "17px", fontWeight: "600" }}> SPOC</h5>
-          <h5 style={{ fontSize: "15px", fontWeight: "500" }}>
-            Your question on thermodynamics was answered.
-          </h5>
-          <h5 style={{ fontSize: "18px", fontWeight: "600" }}> 12:28</h5>
-        </div>
-        <div
-          style={{
-            padding: "1%",
-            display: "flex",
-            justifyContent: "space-between",
-            borderBottom: "1px solid #F5F5F5",
-            width: "98%",
-          }}
-        >
-          <h5 style={{ fontSize: "17px", fontWeight: "600" }}>SPOC</h5>
-          <h5 style={{ fontSize: "15px", fontWeight: "500" }}>
-            Your question on thermodynamics was answered.
-          </h5>
-          <h5 style={{ fontSize: "18px", fontWeight: "600" }}> 04:08</h5>
-        </div>
-      </div>
+    <div className="notification-main-container">
+      <div className="notify-sub-container"></div>
+
+      <Table
+        responsive
+        style={{ backgroundColor: "white", borderRadius: "16px" }}
+      >
+        <thead>
+          <tr>
+            <th></th>
+            <th className="notify-content">First Name</th>
+            <th className="notify-content">Last Name</th>
+            <th className="notify-content">Username</th>
+          </tr>
+        </thead>
+        {data.map((item) => {
+          return (
+            <>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td> {item.title}</td>
+                  <td>{item.subdata}</td>
+                  <td>{item.timer}</td>
+                </tr>
+              </tbody>
+            </>
+          );
+        })}
+      </Table>
     </div>
   );
 }

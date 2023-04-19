@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../../assests/images/ADEMnewLogo-01 1.svg";
+import logo from "../../../assests/logo.svg";
 
 import "../styles/mainpage.scss";
 import Slideshow from "./../../views/components/Slider.js/SliderShow";

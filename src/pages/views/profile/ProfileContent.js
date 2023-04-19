@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Profiles from "../../../assests/images/school.svg";
 import proof from "../../../assests/images/Frame 2148.svg";
+import logo from "../../../assests/logo.svg";
 
 function ProfileContent() {
   const [schoolDetails, SetSchoolDetails] = useState("");
@@ -12,8 +13,8 @@ function ProfileContent() {
     <div className="profile-content-main-container-1">
       <div className="profile-content-container-1">
         <div className="profile-content-container-2">
-          <img className="profile-img" src={schoolDetails.logo} alt="Profile" />
-          <p className="profile-para">{schoolDetails.sch_name}</p>
+          <img className="profile-img mt-5" src={logo} alt="Profile" />
+          {/* <p className="profile-para mt-5">{schoolDetails.sch_name}</p> */}
           {/* <p className="profile-para-1">School</p> */}
         </div>
       </div>

@@ -10,6 +10,7 @@ import dot from "../../../assests/images/3dot.svg";
 import { Dropdown } from "react-bootstrap";
 import "./styles/StudentContent.scss";
 import ReactPaginate from "react-paginate";
+import Table from "react-bootstrap/Table";
 const data = [
   {
     id: 1,
@@ -239,7 +240,7 @@ const StuedentsContent = () => {
         </div>
       </div>
       <div>
-        <table className="student-table-main-container">
+        <Table responsive className="student-table-main-container mt-2">
           <tbody>
             <tr className="student-table-tr">
               <th className="student-table-th">
@@ -317,7 +318,7 @@ const StuedentsContent = () => {
                 );
               })}
           </tbody>
-        </table>
+        </Table>
       </div>
       <div className="mt-5" style={{ marginRight: "35px" }}>
         <ReactPaginate

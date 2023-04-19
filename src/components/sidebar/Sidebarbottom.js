@@ -18,6 +18,7 @@ function Sidebarbottom() {
         bottom: "0px",
         width: "100%",
         backgroundColor: "white",
+        height: "22vh",
       }}
     >
       <div

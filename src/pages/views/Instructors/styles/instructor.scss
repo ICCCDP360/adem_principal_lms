@@ -114,9 +114,13 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem;
+    @include xsBreakPoint {
+      display: flex;
+      flex-direction: column;
+    }
     .instructor-content-sub-container-0 {
       @include xsBreakPoint {
-        margin-left: -4%;
+        // margin-left: -4%;
       }
       .instructor-content-sub-container {
         background: #0395c4;
@@ -151,6 +155,10 @@
         display: flex;
         width: "100%";
       }
+      @include xsBreakPoint {
+        margin-left: -13%;
+        margin-top: 3%;
+      }
       .sub-container-main-1 {
         @include xsBreakPoint {
           width: 57%;
@@ -178,6 +186,7 @@
       .sub-img-container {
         @include xsBreakPoint {
           margin-left: 1%;
+          display: none;
         }
         @include smBreakPoint {
           display: none;

@@ -9,8 +9,9 @@
   }
   @include xsBreakPoint {
     background-color: rgb(245, 245, 245);
-    width: 555px;
-    overflow: hidden;
+    // width: 555px;
+    // overflow: scroll;
+    // height: 100vh;
   }
 }
 
@@ -27,6 +28,12 @@
     width: 100%;
     @include smBreakPoint {
       width: 100%;
+    }
+  }
+  .main-dash-content {
+    @include xsBreakPoint {
+      display: flex;
+      flex-direction: column;
     }
   }
   .main-contain-responsive {
@@ -54,6 +61,10 @@
     padding: 2%;
     border-radius: 10px;
     margin: 10px;
+    @include xsBreakPoint {
+      width: 70%;
+      margin-left: 15%;
+    }
     .average-inside-container {
       display: flex;
       justify-content: space-around;
@@ -79,6 +90,14 @@
           margin-left: 10%;
         }
       }
+    }
+  }
+  .data-container-card {
+    width: 100%;
+    display: flex;
+    @include xsBreakPoint {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -165,8 +184,9 @@
       @include xsBreakPoint {
         display: flex;
         flex-direction: column;
-        width: 1500px;
-        margin-left: 23%;
+        width: 100%;
+        // margin-left: 23%;
+        margin-left: 20%;
       }
     }
     .average-contain-2-Preparatory {
@@ -186,6 +206,7 @@
       }
       @include xsBreakPoint {
         margin-top: 2%;
+        width: 60%;
       }
     }
     .average-container-10th {
@@ -261,6 +282,9 @@
     .table-body-container-2 {
       border: 1.5px solid #f5f5f5;
       height: 3rem;
+      @include xsBreakPoint {
+        font-size: 10px;
+      }
     }
     .table-body-container-3 {
       font-weight: 400;
@@ -294,6 +318,7 @@
       }
       @include xsBreakPoint {
         width: 96%;
+        height: 100vh;
       }
       @include lgBreakPoint {
         width: 98%;
@@ -340,4 +365,21 @@
 .calendar {
   width: 98% !important;
   border: none !important;
+}
+
+.profile_header {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  @include xsBreakPoint {
+    font-size: 10px;
+  }
+  .notify {
+    margin-right: 30px;
+    @include xsBreakPoint {
+      margin-left: 5%;
+    }
+  }
 }

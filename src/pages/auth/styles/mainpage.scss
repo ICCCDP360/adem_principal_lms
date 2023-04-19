@@ -148,6 +148,9 @@ input::-webkit-inner-spin-button {
       border-top-right-radius: 15px;
       border-bottom-right-radius: 15px;
       padding: 2%;
+      @include mdBreakPoint {
+        width: 50%;
+      }
       @include smBreakPoint {
         border-radius: unset;
       }

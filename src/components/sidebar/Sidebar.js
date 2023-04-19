@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Sidebar.scss";
-import AdamLogo from "../../assests/images/ADEMnewLogo-01 1.svg";
+import logo from "../../assests/logo.svg";
 import dashboardWhite from "../../assests/images/dashboardWhite.svg";
 import dashboardBlack from "../../assests/images/dashboardBlack.svg";
 import contentWhite from "../../assests/images/contentWhite.svg";
@@ -47,7 +47,7 @@ function Sidebar() {
               onClick={() => navigate("/dashboard")}
             >
               <img
-                src={schoolDetails?.logo}
+                src={logo}
                 alt="school logo"
                 width="80px"
                 height="80px"
@@ -132,7 +132,7 @@ function Sidebar() {
               style={{ cursor: "pointer" }}
               onClick={() => navigate("/dashboard")}
             >
-              <img src={AdamLogo} className="header-logo" />
+              {/* <img src={AdamLogo} className="header-logo" /> */}
             </div>
             <div className="header-divider-container">
               <hr className="divider-line" />

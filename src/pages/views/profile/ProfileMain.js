@@ -5,7 +5,7 @@ import ProfileHeader from "./ProfileHeader";
 
 function ProfileMain() {
   return (
-    <div style={{ padding: "1%", width: "100%", height: "100vh" }}>
+    <div className="profile-main-container-data">
       <ProfileHeader />
       <ProfileContent />
     </div>

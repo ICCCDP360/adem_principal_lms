@@ -12,7 +12,8 @@
     height: 100vh;
   }
   @include xsBreakPoint {
-    height: 100vh;
+    height: fit-content;
+    // overflow: scroll;
 
     // padding: 1%;
   }
@@ -208,6 +209,9 @@
         @include smBreakPoint {
           margin-left: 109px;
           display: flex;
+        }
+        @include xsBreakPoint {
+          display: none;
         }
         .sub-img {
           padding-right: 0.5rem;
