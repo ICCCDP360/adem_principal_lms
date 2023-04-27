@@ -13,7 +13,7 @@ function Signin() {
   const [schoolPasscode, SetSchoolPasscode] = useState("");
   const APISignin = () => {
     axios
-      .post("https://backend.goadem.com/api/v1/school/signin", {
+      .post("https://lms-backend.cdp360.org/api/v1/school/signin", {
         sch_id: schoolId,
         passcode: schoolPasscode,
       })
